@@ -101,10 +101,6 @@ class NovaInlineRelationship extends Field
 
         $properties = $this->getPropertiesWithMetaForDisplay($resource, $attribute);
 
-        Log::debug([
-            'attribute' => $attribute
-        ]);
-
         $this->resolveResourceFields($resource, $attribute, $properties);
     }
 
@@ -187,6 +183,10 @@ class NovaInlineRelationship extends Field
                 return ($request->isCreateOrAttachRequest() && $field->showOnCreation)
                     || ($request->isUpdateOrUpdateAttachedRequest() && $field->showOnUpdate);
             });
+
+        Log::debug([
+            'fields' => $fields
+        ]);
 
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
