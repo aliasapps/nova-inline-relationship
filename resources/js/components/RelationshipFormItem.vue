@@ -96,7 +96,7 @@ export default {
     },
 
     label() {
-      return "hai";
+      //   return "hai";
       return this.field.singular
         ? this.field.singularLabel
         : `${this.field.singularLabel} ${this.id + 1}`;
