@@ -81,7 +81,20 @@ export default {
         Object.keys({ ...this.value }).map((attrib) => {
           if (attrib === "core_required") {
             return {
-              ...this.value,
+              ...{
+                options: {},
+              },
+              ...this.value[attrib].meta,
+              ...{
+                helpText: "hello",
+                attribute:
+                  this.value[attrib].meta.component === "file-field"
+                    ? attrib + "?" + this.id
+                    : this.field.attribute + "_" + this.id + "_" + attrib, // This is needed to enable delete link for file without triggering duplicate id warning
+                name: this.value[attrib].meta.singularLabel,
+                deletable: this.modelId > 0, // Hide delete button if model Id is not present, i.e. new model
+                attrib: attrib,
+              },
             };
           } else {
             return {
