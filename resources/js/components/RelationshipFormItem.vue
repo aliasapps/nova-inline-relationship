@@ -78,6 +78,16 @@ export default {
     //
   },
 
+  watch: {
+    fields: {
+      handler(newVal, OldVal) {
+        console.log(newVal);
+        console.log(this.fields);
+      },
+      deep: true,
+    },
+  },
+
   computed: {
     fields() {
       return _.keyBy(
