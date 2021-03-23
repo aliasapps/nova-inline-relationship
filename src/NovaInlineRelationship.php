@@ -549,7 +549,7 @@ class NovaInlineRelationship extends Field
         });
 
         Log::debug([
-            'this value' => $this->value
+            'this value' => ($this->value)->values()->all()
         ]);
     }
 
