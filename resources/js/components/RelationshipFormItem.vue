@@ -79,6 +79,13 @@ export default {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
+          if (attrib === "core_required") {
+            return {
+              ...{
+                helpText: "Hello",
+              },
+            };
+          }
           return {
             ...{
               options: {},
