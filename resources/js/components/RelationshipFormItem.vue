@@ -75,19 +75,17 @@ export default {
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
   created() {
-    console.log(this.fields);
-  },
+    const checkbox = document.getElementById(
+      this.field.attribute + "_" + this.id + "_" + attrib
+    );
 
-  watch: {
-    fields: function() {
-      console.log("changed!");
-      if (
-        this.fields.order_type.value !== "SALE" ||
-        this.fields.order_type.value !== "WARRANTY"
-      ) {
-        this.fields.core_required.value = false;
+    checkbox.addEventListener("change", function() {
+      if (this.checked) {
+        console.log("checked!");
+      } else {
+        console.log("not checked!");
       }
-    },
+    });
   },
 
   computed: {
