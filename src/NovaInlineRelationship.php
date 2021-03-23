@@ -290,6 +290,11 @@ class NovaInlineRelationship extends Field
         $this->rules = [$this->getRelationshipRule($attribute, $properties)];
         $modelKey = optional($this->value)->first() ?? $resource->{$attribute}()->getRelated()->newInstance();
 
+        Log::debug([
+            'value 3' => $this->value,
+            'properties' => $properties
+        ]);
+
         $this->withMeta([
             'defaults' => $this->getDefaultsFromProperties($properties)->all(),
             'settings' => $properties->all(),
@@ -362,9 +367,9 @@ class NovaInlineRelationship extends Field
         $item['meta']['helpText'] = $item['helpText'] ?? null;
         $item['default'] = $item['defaultCallback'] ?? null;
 
-        Log::debug([
-            'post item' => $item
-        ]);
+        // Log::debug([
+        //     'post item' => $item
+        // ]);
 
         return $item;
     }
