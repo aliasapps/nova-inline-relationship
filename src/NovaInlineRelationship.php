@@ -146,7 +146,7 @@ class NovaInlineRelationship extends Field
                 'default value' => $value
             ]);
 
-            return $value['default'] ?? '';
+            return $value['defaultCallback'] ?? '';
         });
     }
 
