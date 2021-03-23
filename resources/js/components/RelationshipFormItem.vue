@@ -81,9 +81,8 @@ export default {
         Object.keys({ ...this.value }).map((attrib) => {
           if (attrib === "core_required") {
             return {
-              ...{
-                helpText: "Hello",
-              },
+              ...this.value,
+              helpText: "hello",
             };
           }
           return {
