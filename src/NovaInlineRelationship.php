@@ -191,8 +191,7 @@ class NovaInlineRelationship extends Field
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
-                Log:
-                debug([
+                Log::debug([
                     '2 value' => $value
                 ]);
                 return $this->setMetaFromClass($value, $key);
