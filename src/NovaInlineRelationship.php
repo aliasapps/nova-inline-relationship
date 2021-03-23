@@ -365,6 +365,8 @@ class NovaInlineRelationship extends Field
         $item['meta']['singularLabel'] = $item['label'] ?? $attrib;
         $item['meta']['placeholder'] = 'Add ' . $item['meta']['singularLabel'];
         $item['meta']['helpText'] = $item['helpText'] ?? null;
+        $item['meta']['value'] = $item['defaultCallback'] ?? null;
+
         $item['default'] = $item['defaultCallback'] ?? null;
 
         // Log::debug([
