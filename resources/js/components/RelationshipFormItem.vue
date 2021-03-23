@@ -56,6 +56,7 @@
       </div>
       <component
         v-if="field.component === 'boolean-field'"
+        :class="'hidden'"
         :is="'form-boolean-field'"
         :ref="attrib"
         :field="field"
@@ -63,7 +64,6 @@
         :errors="errors"
         :resource-id="modelId"
         :resource-name="modelKey"
-        :checked="false"
       >
       </component>
       <component
