@@ -51,6 +51,9 @@
       :key="attrib"
       class="nova-items-field-input-wrapper w-full"
     >
+      <div v-if="field.helpText" class="help-text ml-10 mt-2">
+        {{ field.helpText }}
+      </div>
       <component
         :is="'form-' + field.component"
         :ref="attrib"
@@ -61,9 +64,6 @@
         :resource-name="modelKey"
       >
       </component>
-      <div v-if="field.helpText" class="help-text mt-2">
-        {{ field.helpText }}
-      </div>
     </div>
   </div>
 </template>
@@ -75,14 +75,13 @@ export default {
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
   created() {
-    console.log(this.fields);
+    // console.log(this.fields);
   },
 
   computed: {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          console.log(this.value[attrib].meta);
           return {
             ...{
               options: {},

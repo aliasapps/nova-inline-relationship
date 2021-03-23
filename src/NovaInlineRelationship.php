@@ -530,7 +530,7 @@ class NovaInlineRelationship extends Field
     {
         Log::debug([
             // 'attribute' => $attribute,
-            'properties' => $properties
+            // 'properties' => $properties
         ]);
 
         if ($this->isSingularRelationship($resource, $attribute)) {
@@ -550,7 +550,7 @@ class NovaInlineRelationship extends Field
                 ->filter();
         });
 
-        Log::debug($this->value);
+        // Log::debug($this->value);
     }
 
     /**
