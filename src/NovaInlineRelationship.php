@@ -526,14 +526,19 @@ class NovaInlineRelationship extends Field
      */
     protected function updateFieldValue($resource, $attribute, Collection $properties): void
     {
+        Log::debug([
+            'attribute' => $attribute,
+            'properties' => $properties
+        ]);
+
         if ($this->isSingularRelationship($resource, $attribute)) {
             $this->value = collect(Arr::wrap($this->value));
         }
 
         $this->value = $this->value->map(function ($items) use ($properties) {
-            Log::debug([
-                'updateFieldValue' => $items
-            ]);
+            // Log::debug([
+            //     'updateFieldValue' => $items
+            // ]);
             return collect($items)
                 ->map(function ($value, $key) use ($properties, $items) {
                     return $properties->has($key)
