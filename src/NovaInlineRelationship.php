@@ -160,6 +160,9 @@ class NovaInlineRelationship extends Field
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
+                Log::debug([
+                    'value' => $value
+                ]);
                 return $this->setMetaFromClass($value, $key);
             });
     }
@@ -272,10 +275,7 @@ class NovaInlineRelationship extends Field
         if (!empty($this->sortUsing) && $this->value instanceof Collection && $this->value->isNotEmpty()) {
             $this->value = $this->value->sortBy($this->sortUsing)->values();
         }
-        Log::debug([
-            // 'resource' => $resource,
-            // 'attribute' => $attribute
-        ]);
+
 
         $this->rules = [$this->getRelationshipRule($attribute, $properties)];
         $modelKey = optional($this->value)->first() ?? $resource->{$attribute}()->getRelated()->newInstance();
@@ -476,9 +476,9 @@ class NovaInlineRelationship extends Field
      */
     protected function getPropertiesFromFields(Collection $fields): Collection
     {
-        Log::debug([
-            'fields' => $fields
-        ]);
+        // Log::debug([
+        //     'fields' => $fields
+        // ]);
         return $fields->map(function ($value) {
             return [
                 'component' => get_class($value),
@@ -486,6 +486,9 @@ class NovaInlineRelationship extends Field
                 'options' => $value->meta,
                 'rules' => $value->rules,
                 'attribute' => $value->attribute,
+                'defaultCallback' => $value->defaultCallback,
+                'helpText' => $value->helpText,
+                'helpWidth' => $value->helpWidth
             ];
         });
     }
