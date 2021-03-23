@@ -333,8 +333,8 @@ class NovaInlineRelationship extends Field
     {
 
         Log::debug([
-            'item' => $item,
-            'attrib' => $attrib,
+            'pre item' => $item,
+            // 'attrib' => $attrib,
         ]);
 
         $attrs = ['name' => $attrib, 'attribute' => $attrib];
@@ -361,6 +361,10 @@ class NovaInlineRelationship extends Field
         $item['meta'] = $class->jsonSerialize();
         $item['meta']['singularLabel'] = $item['label'] ?? $attrib;
         $item['meta']['placeholder'] = 'Add ' . $item['meta']['singularLabel'];
+
+        Log::debug([
+            'post item' => $item
+        ]);
 
         return $item;
     }
