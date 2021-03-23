@@ -161,7 +161,6 @@ export default {
         modelId: 0,
         fields: { ...this.field.settings },
       });
-      console.log({ value });
       this.handleChange(value);
     },
   },
