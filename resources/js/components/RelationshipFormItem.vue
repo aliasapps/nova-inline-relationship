@@ -60,10 +60,10 @@
         :resource-id="modelId"
         :resource-name="modelKey"
       >
+        <div v-if="field.helpText" class="help-text mt-2">
+          {{ field.helpText }}
+        </div>
       </component>
-      <div v-if="field.helpText" class="help-text mt-2">
-        {{ field.helpText }}
-      </div>
     </div>
   </div>
 </template>
@@ -82,7 +82,7 @@ export default {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          console.log({ attrib });
+          console.log(this.value);
           if (attrib === "quantity") {
             return {
               ...{
