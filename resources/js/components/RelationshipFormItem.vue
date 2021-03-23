@@ -56,7 +56,7 @@
       </div>
       <component
         v-if="field.component === 'boolean-field'"
-        v-bind:style="{ display: show }"
+        v-bind:style="{ display: 'hidden !important' }"
         :is="'form-boolean-field'"
         :ref="attrib"
         :field="field"
