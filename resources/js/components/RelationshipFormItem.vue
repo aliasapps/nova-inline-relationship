@@ -61,6 +61,9 @@
         :resource-name="modelKey"
       >
       </component>
+      <div v-if="field.helpText" class="help-text mt-2">
+        {{ field.helpText }}
+      </div>
     </div>
   </div>
 </template>
