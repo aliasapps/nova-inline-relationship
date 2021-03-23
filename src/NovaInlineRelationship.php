@@ -137,7 +137,7 @@ class NovaInlineRelationship extends Field
     public function getDefaultsFromProperties(Collection $properties): Collection
     {
         return $properties->map(function ($value) {
-            Log::debug(['value' => $value]);
+            // Log::debug(['value' => $value]);
             return $value['default'] ?? '';
         });
     }
@@ -272,6 +272,9 @@ class NovaInlineRelationship extends Field
         if (!empty($this->sortUsing) && $this->value instanceof Collection && $this->value->isNotEmpty()) {
             $this->value = $this->value->sortBy($this->sortUsing)->values();
         }
+        Log::debug([
+            'value' => $this->value
+        ]);
 
         $this->rules = [$this->getRelationshipRule($attribute, $properties)];
         $modelKey = optional($this->value)->first() ?? $resource->{$attribute}()->getRelated()->newInstance();
