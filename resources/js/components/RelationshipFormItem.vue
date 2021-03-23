@@ -63,6 +63,7 @@
         :errors="errors"
         :resource-id="modelId"
         :resource-name="modelKey"
+        :checked="false"
       >
       </component>
       <component
