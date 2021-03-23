@@ -75,7 +75,7 @@ export default {
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
   created() {
-    // console.log(this.fields);
+    console.log(this.fields);
   },
 
   computed: {
