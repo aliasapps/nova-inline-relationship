@@ -184,13 +184,16 @@ class NovaInlineRelationship extends Field
                     || ($request->isUpdateOrUpdateAttachedRequest() && $field->showOnUpdate);
             });
 
-        Log::debug([
-            'fields' => $fields
-        ]);
+        // Log::debug([
+        //     'fields' => $fields
+        // ]);
 
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
+                Log::debug([
+                    'value from field' => $value
+                ]);
                 return $this->setMetaFromClass($value, $key);
             });
     }
