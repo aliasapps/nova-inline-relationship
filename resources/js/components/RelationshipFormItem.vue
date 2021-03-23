@@ -106,7 +106,7 @@ export default {
     getValueFromChildren() {
       return _.tap(new FormData(), (formData) => {
         _(this.$refs).each((item) => {
-          console.log({ item });
+          // console.log({ item });
           if (item[0].field.component === "file-field") {
             if (item[0].file) {
               formData.append(
