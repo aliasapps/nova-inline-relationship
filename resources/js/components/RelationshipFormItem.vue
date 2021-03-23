@@ -78,6 +78,17 @@ export default {
     console.log(this.fields);
   },
 
+  watch: {
+    fields: function() {
+      if (
+        this.fields.order_type.value !== "SALE" ||
+        this.fields.order_type.value !== "WARRANTY"
+      ) {
+        this.fields.core_required.value = false;
+      }
+    },
+  },
+
   computed: {
     fields() {
       return _.keyBy(
