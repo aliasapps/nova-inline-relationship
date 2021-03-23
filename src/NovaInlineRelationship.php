@@ -481,14 +481,16 @@ class NovaInlineRelationship extends Field
         //     'fields' => $fields
         // ]);
         return $fields->map(function ($value) {
-
+            Log::debug([
+                'value' => $value
+            ]);
             return [
                 'component' => get_class($value),
                 'label' => $value->name,
                 'options' => $value->meta,
                 'rules' => $value->rules,
                 'attribute' => $value->attribute,
-                'defaultCallback' => $value->defaultCallback,
+                // 'defaultCallback' => $value->defaultCallback,
                 'helpText' => $value->helpText,
                 'helpWidth' => $value->helpWidth
             ];
