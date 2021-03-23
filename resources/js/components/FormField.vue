@@ -59,6 +59,10 @@ export default {
 
   props: ["resourceName", "resourceId", "field"],
 
+  created() {
+    console.log("this.items: ", this.items);
+  },
+
   data: function() {
     return {
       id: 0,
