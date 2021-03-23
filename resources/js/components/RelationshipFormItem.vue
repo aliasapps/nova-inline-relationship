@@ -66,6 +66,17 @@
       >
       </component>
       <component
+        v-else-if="attrib === 'order_type'"
+        :is="'form-' + field.component"
+        :ref="attrib"
+        :field="field"
+        :full-width-content="true"
+        :errors="errors"
+        :resource-id="modelId"
+        :resource-name="modelKey"
+      >
+      </component>
+      <component
         v-else
         :is="'form-' + field.component"
         :ref="attrib"
