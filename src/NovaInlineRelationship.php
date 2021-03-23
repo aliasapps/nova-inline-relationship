@@ -137,7 +137,6 @@ class NovaInlineRelationship extends Field
     public function getDefaultsFromProperties(Collection $properties): Collection
     {
         return $properties->map(function ($value) {
-            // Log::debug(['value' => $value]);
             return $value['default'] ?? '';
         });
     }
@@ -184,16 +183,10 @@ class NovaInlineRelationship extends Field
                     || ($request->isUpdateOrUpdateAttachedRequest() && $field->showOnUpdate);
             });
 
-        // Log::debug([
-        //     'fields' => $fields
-        // ]);
 
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
-                Log::debug([
-                    'value from field' => $value
-                ]);
                 return $this->setMetaFromClass($value, $key);
             });
     }
@@ -483,6 +476,9 @@ class NovaInlineRelationship extends Field
      */
     protected function getPropertiesFromFields(Collection $fields): Collection
     {
+        Log::debug([
+            'fields' => $fields
+        ]);
         return $fields->map(function ($value) {
             return [
                 'component' => get_class($value),
