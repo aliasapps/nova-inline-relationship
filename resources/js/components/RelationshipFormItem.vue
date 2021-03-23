@@ -79,14 +79,15 @@ export default {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          if (attrib === "core_required") {
+          console.log({ attrib });
+          if (attrib === "quantity") {
             return {
               ...{
                 options: {},
               },
               ...this.value[attrib].meta,
               ...{
-                helpText: "hello",
+                helpText: "Maximum quantity is 5",
                 attribute:
                   this.value[attrib].meta.component === "file-field"
                     ? attrib + "?" + this.id
