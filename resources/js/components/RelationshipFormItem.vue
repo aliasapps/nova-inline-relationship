@@ -82,18 +82,6 @@ export default {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          if (attrib === "core_required") {
-            const checkbox = document.getElementById(
-              this.field.attribute + "_" + this.id + "_" + attrib
-            );
-            checkbox.addEventListener("change", function() {
-              if (this.changed) {
-                console.log("changed!");
-              } else {
-                console.log("also changed!");
-              }
-            });
-          }
           return {
             ...{
               options: {},
