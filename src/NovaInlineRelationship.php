@@ -142,11 +142,11 @@ class NovaInlineRelationship extends Field
     public function getDefaultsFromProperties(Collection $properties): Collection
     {
         return $properties->map(function ($value) {
-            Log::debug([
-                'default value' => $value
-            ]);
+            // Log::debug([
+            //     'default value' => $value
+            // ]);
 
-            return $value['defaultCallback'] ?? '';
+            return $value['default'] ?? '';
         });
     }
 
@@ -360,10 +360,11 @@ class NovaInlineRelationship extends Field
         $item['meta']['singularLabel'] = $item['label'] ?? $attrib;
         $item['meta']['placeholder'] = 'Add ' . $item['meta']['singularLabel'];
         $item['meta']['helpText'] = $item['helpText'] ?? null;
+        $item['default'] = $item['defaultCallback'] ?? null;
 
-        // Log::debug([
-        //     'post item' => $item
-        // ]);
+        Log::debug([
+            'post item' => $item
+        ]);
 
         return $item;
     }
