@@ -101,6 +101,10 @@ class NovaInlineRelationship extends Field
 
         $properties = $this->getPropertiesWithMetaForDisplay($resource, $attribute);
 
+        Log::debug([
+            'attribute' => $attribute
+        ]);
+
         $this->resolveResourceFields($resource, $attribute, $properties);
     }
 
@@ -273,8 +277,8 @@ class NovaInlineRelationship extends Field
             $this->value = $this->value->sortBy($this->sortUsing)->values();
         }
         Log::debug([
-            'resource' => $resource,
-            'attribute' => $attribute
+            // 'resource' => $resource,
+            // 'attribute' => $attribute
         ]);
 
         $this->rules = [$this->getRelationshipRule($attribute, $properties)];
