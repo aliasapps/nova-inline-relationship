@@ -124,6 +124,10 @@ class NovaInlineRelationship extends Field
 
             $properties = $this->getPropertiesWithMetaForForms($resource, $attribute);
 
+            Log::debug([
+                'properties' => $properties
+            ]);
+
             $this->resolveResourceFields($resource, $attribute, $properties);
         }
     }
@@ -161,9 +165,7 @@ class NovaInlineRelationship extends Field
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
-                Log::debug([
-                    'value' => $value
-                ]);
+
                 return $this->setMetaFromClass($value, $key);
             });
     }
@@ -191,9 +193,9 @@ class NovaInlineRelationship extends Field
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
-                Log::debug([
-                    '2 value' => $value
-                ]);
+                // Log::debug([
+                //     '2 value' => $value
+                // ]);
                 return $this->setMetaFromClass($value, $key);
             });
     }
@@ -493,7 +495,7 @@ class NovaInlineRelationship extends Field
                 'options' => $value->meta,
                 'rules' => $value->rules,
                 'attribute' => $value->attribute,
-                // 'defaultCallback' => $value->defaultCallback,
+                'defaultCallback' => $value->defaultCallback,
                 'helpText' => $value->helpText,
                 'helpWidth' => $value->helpWidth
             ];
