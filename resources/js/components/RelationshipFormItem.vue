@@ -78,16 +78,6 @@ export default {
     //
   },
 
-  watch: {
-    fields: {
-      handler(newVal, OldVal) {
-        console.log(newVal);
-        console.log(this.fields);
-      },
-      deep: true,
-    },
-  },
-
   computed: {
     fields() {
       return _.keyBy(
@@ -117,6 +107,12 @@ export default {
       return this.field.singular
         ? this.field.singularLabel
         : `${this.field.singularLabel} ${this.id + 1}`;
+    },
+  },
+
+  watch: {
+    fields() {
+      console.log("changed!");
     },
   },
 
