@@ -273,7 +273,8 @@ class NovaInlineRelationship extends Field
             $this->value = $this->value->sortBy($this->sortUsing)->values();
         }
         Log::debug([
-            'value' => $this->value
+            'resource' => $resource,
+            'attribute' => $attribute
         ]);
 
         $this->rules = [$this->getRelationshipRule($attribute, $properties)];
