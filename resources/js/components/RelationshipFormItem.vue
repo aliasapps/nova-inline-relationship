@@ -80,6 +80,7 @@ export default {
 
   watch: {
     fields: function() {
+      console.log("changed!");
       if (
         this.fields.order_type.value !== "SALE" ||
         this.fields.order_type.value !== "WARRANTY"
