@@ -527,7 +527,7 @@ class NovaInlineRelationship extends Field
     protected function updateFieldValue($resource, $attribute, Collection $properties): void
     {
         Log::debug([
-            'attribute' => $attribute,
+            // 'attribute' => $attribute,
             'properties' => $properties
         ]);
 
@@ -547,6 +547,10 @@ class NovaInlineRelationship extends Field
                 })
                 ->filter();
         });
+
+        Log::debug([
+            'this value' => $this->value
+        ]);
     }
 
     /**
