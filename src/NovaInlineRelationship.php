@@ -548,9 +548,7 @@ class NovaInlineRelationship extends Field
                 ->filter();
         });
 
-        Log::debug([
-            'this value' => ($this->value)->values()->all()
-        ]);
+        Log::debug($this->value);
     }
 
     /**
