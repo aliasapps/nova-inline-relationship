@@ -76,7 +76,7 @@ export default {
 
   created() {
     const checkbox = document.getElementById(
-      this.field.attribute + "_" + this.id + "_" + attrib
+      "order_products" + "_" + this.id + "_" + "core_required"
     );
 
     checkbox.addEventListener("change", function() {
