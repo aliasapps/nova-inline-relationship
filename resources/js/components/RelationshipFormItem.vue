@@ -60,10 +60,10 @@
         :resource-id="modelId"
         :resource-name="modelKey"
       >
-        <div v-if="field.helpText" class="help-text mt-2">
-          {{ field.helpText }}
-        </div>
       </component>
+      <div v-if="field.helpText" class="help-text mt-2">
+        {{ field.helpText }}
+      </div>
     </div>
   </div>
 </template>
@@ -84,22 +84,22 @@ export default {
         Object.keys({ ...this.value }).map((attrib) => {
           console.log(this.value);
           if (attrib === "quantity") {
-            return {
-              ...{
-                options: {},
-              },
-              ...this.value[attrib].meta,
-              ...{
-                helpText: "Maximum quantity is 5",
-                attribute:
-                  this.value[attrib].meta.component === "file-field"
-                    ? attrib + "?" + this.id
-                    : this.field.attribute + "_" + this.id + "_" + attrib, // This is needed to enable delete link for file without triggering duplicate id warning
-                name: this.value[attrib].meta.singularLabel,
-                deletable: this.modelId > 0, // Hide delete button if model Id is not present, i.e. new model
-                attrib: attrib,
-              },
-            };
+            // return {
+            //   ...{
+            //     options: {},
+            //   },
+            //   ...this.value[attrib].meta,
+            //   ...{
+            //     helpText: "Maximum quantity is 5",
+            //     attribute:
+            //       this.value[attrib].meta.component === "file-field"
+            //         ? attrib + "?" + this.id
+            //         : this.field.attribute + "_" + this.id + "_" + attrib, // This is needed to enable delete link for file without triggering duplicate id warning
+            //     name: this.value[attrib].meta.singularLabel,
+            //     deletable: this.modelId > 0, // Hide delete button if model Id is not present, i.e. new model
+            //     attrib: attrib,
+            //   },
+            // };
           } else {
             return {
               ...{
