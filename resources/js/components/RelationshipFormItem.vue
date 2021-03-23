@@ -51,7 +51,7 @@
       :key="attrib"
       class="nova-items-field-input-wrapper w-full"
     >
-      <div v-if="field.helpText" class="help-text ml-10 mt-2">
+      <div v-if="field.helpText" class="help-text ml-8 mt-2">
         {{ field.helpText }}
       </div>
       <component
