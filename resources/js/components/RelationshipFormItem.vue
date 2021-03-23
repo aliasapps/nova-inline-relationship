@@ -82,7 +82,7 @@ export default {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          console.log(this.value);
+          console.log(this.value[attrib].meta);
           if (attrib === "quantity") {
             // return {
             //   ...{
@@ -107,7 +107,7 @@ export default {
               },
               ...this.value[attrib].meta,
               ...{
-                helpText: this.value[attrib].meta.helpText,
+                // helpText: this.value[attrib].meta.helpText,
                 attribute:
                   this.value[attrib].meta.component === "file-field"
                     ? attrib + "?" + this.id
