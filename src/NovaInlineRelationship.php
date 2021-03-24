@@ -340,6 +340,9 @@ class NovaInlineRelationship extends Field
      */
     protected function setMetaFromClass(array $item, $attrib, $value = null, $resource = null)
     {
+
+        Log::debug($item);
+
         $attrs = ['name' => $attrib, 'attribute' => $attrib];
 
         /** @var Field $class */
@@ -528,10 +531,6 @@ class NovaInlineRelationship extends Field
      */
     protected function updateFieldValue($resource, $attribute, Collection $properties): void
     {
-        Log::debug([
-            // 'attribute' => $attribute,
-            // 'properties' => $properties
-        ]);
 
         if ($this->isSingularRelationship($resource, $attribute)) {
             $this->value = collect(Arr::wrap($this->value));
