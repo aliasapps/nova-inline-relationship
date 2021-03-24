@@ -55,8 +55,7 @@
         {{ field.helpText }}
       </div>
       <component
-        v-if="field.component === 'boolean-field'"
-        v-bind:style="{ display: 'hidden !important' }"
+        v-if="field.attrib === 'core_required'"
         :is="'form-boolean-field'"
         :ref="attrib"
         :field="field"
