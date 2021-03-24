@@ -98,11 +98,7 @@ export default {
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
   created() {
-    //
-  },
-
-  data: {
-    show: "hidden !important",
+    console.log(this.$root);
   },
 
   computed: {
