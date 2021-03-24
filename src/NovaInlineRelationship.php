@@ -340,7 +340,9 @@ class NovaInlineRelationship extends Field
      */
     protected function setMetaFromClass(array $item, $attrib, $value = null, $resource = null)
     {
-
+        Log::debug([
+            'post item' => $item
+        ]);
 
         $attrs = ['name' => $attrib, 'attribute' => $attrib];
 
