@@ -102,6 +102,15 @@ export default {
     // Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
 
+  beforeRouteLeave(to, from, next) {
+    /**
+     * remove Nova.$on listeners TODO
+     */
+    // console.log("navigated away");
+    // clearInterval(this.interval);
+    // next();
+  },
+
   computed: {
     fields() {
       return _.keyBy(
@@ -148,6 +157,9 @@ export default {
     handleOrderType(data) {
       console.log(data);
       console.log(this.fields);
+      if (data === "WARRANTY") {
+        this.fields.core_required.value = false;
+      }
     },
 
     getValueFromChildren() {

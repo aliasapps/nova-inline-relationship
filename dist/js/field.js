@@ -33568,6 +33568,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     // console.log("hello");
     // Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
+  beforeRouteLeave: function beforeRouteLeave(to, from, next) {
+    /**
+     * remove Nova.$on listeners TODO
+     */
+    // console.log("navigated away");
+    // clearInterval(this.interval);
+    // next();
+  },
 
 
   computed: {
@@ -33602,6 +33610,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     handleOrderType: function handleOrderType(data) {
       console.log(data);
       console.log(this.fields);
+      if (data === "WARRANTY") {
+        this.fields.core_required.value = false;
+      }
     },
     getValueFromChildren: function getValueFromChildren() {
       var _this2 = this;
