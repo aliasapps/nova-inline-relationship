@@ -33610,16 +33610,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   methods: {
     handleOrderType: function handleOrderType(data) {
       console.log(data);
-      console.log(this.fields.core_required);
+      // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.fields.core_required.value = false;
+        coreRequiredBools.attrib = true;
         console.log(this.fields.core_required);
-        // this.coreRequiredBools[this.fields.core_required.attribute] = false;
-        // console.log(
-        //   this.coreRequiredBools[this.fields.core_required.attribute]
-        // );
-        // console.log(this.coreRequiredBools);
-        // this.fields.core_required.value = false;
       }
     },
     getValueFromChildren: function getValueFromChildren() {
@@ -33790,7 +33784,7 @@ var render = function() {
                     errors: _vm.errors,
                     "resource-id": _vm.modelId,
                     "resource-name": _vm.modelKey,
-                    "v-model": field.value
+                    "v-model": _vm.coreRequiredBools[attrib]
                   }
                 })
               : attrib === "order_type"
