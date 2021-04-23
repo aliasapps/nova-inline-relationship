@@ -33575,7 +33575,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       var _this = this;
 
       return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
-        Nova.$on(_this.field.attribute + "_" + _this.id + "_" + attrib, _this.handleOrderType);
+        Nova.$on(_this.field.attribute + "_" + _this.id + "_" + attrib + "-change", _this.handleOrderType);
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {

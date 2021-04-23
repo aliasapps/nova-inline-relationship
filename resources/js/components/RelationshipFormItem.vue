@@ -107,7 +107,7 @@ export default {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
           Nova.$on(
-            this.field.attribute + "_" + this.id + "_" + attrib,
+            this.field.attribute + "_" + this.id + "_" + attrib + "-change",
             this.handleOrderType
           );
           return {
