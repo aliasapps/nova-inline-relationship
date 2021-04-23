@@ -99,7 +99,7 @@ export default {
 
   created() {
     console.log("hello");
-    Nova.$on("order_products_0_order_type-change", (data) => console.log(data));
+    Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
 
   computed: {
@@ -141,6 +141,11 @@ export default {
   },
 
   methods: {
+    handleOrderType(data) {
+      console.log(data);
+      console.log(this.fields);
+    },
+
     getValueFromChildren() {
       return _.tap(new FormData(), (formData) => {
         _(this.$refs).each((item) => {
