@@ -34065,22 +34065,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
 
-  computed: {
-    orderType: function (_orderType) {
-      function orderType() {
-        return _orderType.apply(this, arguments);
-      }
-
-      orderType.toString = function () {
-        return _orderType.toString();
-      };
-
-      return orderType;
-    }(function () {
-      console.log(orderType);
-      return this.orderType;
-    })
-  },
+  //   computed: {
+  //     orderType() {
+  //       console.log(orderType);
+  //       return this.orderType;
+  //     },
+  //   },
 
   methods: {
     handleOrderType: function handleOrderType(data) {

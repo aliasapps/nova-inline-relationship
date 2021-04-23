@@ -36,12 +36,12 @@ export default {
     };
   },
 
-  computed: {
-    orderType() {
-      console.log(orderType);
-      return this.orderType;
-    },
-  },
+  //   computed: {
+  //     orderType() {
+  //       console.log(orderType);
+  //       return this.orderType;
+  //     },
+  //   },
 
   methods: {
     handleOrderType(data) {
