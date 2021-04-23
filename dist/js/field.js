@@ -33564,6 +33564,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -33787,7 +33792,13 @@ var render = function() {
               : _vm._e(),
             _vm._v(" "),
             field.attrib === "core_required"
-              ? _c("form-core-required")
+              ? _c("form-core-required", {
+                  attrs: {
+                    field: field,
+                    "resource-id": _vm.modelId,
+                    "resource-name": _vm.modelKey
+                  }
+                })
               : attrib === "order_type"
               ? _c("form-" + field.component, {
                   ref: attrib,

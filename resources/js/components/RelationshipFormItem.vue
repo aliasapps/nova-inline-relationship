@@ -55,7 +55,12 @@
         {{ field.helpText }}
       </div>
 
-      <form-core-required v-if="field.attrib === 'core_required'">
+      <form-core-required
+        v-if="field.attrib === 'core_required'"
+        :field="field"
+        :resource-id="modelId"
+        :resource-name="modelKey"
+      >
       </form-core-required>
       <!-- <component
         v-if="field.attrib === 'core_required'"
