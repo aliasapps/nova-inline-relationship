@@ -33615,7 +33615,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       console.log(data);
       // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.coreRequiredBools.core_required = true;
+        this.coreRequiredBools.core_required.checked = true;
         console.log(this.fields.core_required);
         console.log(this.coreRequiredBools);
       }
