@@ -55,7 +55,9 @@
         {{ field.helpText }}
       </div>
 
-      <component
+      <form-core-required v-if="field.attrib === 'core_required'">
+      </form-core-required>
+      <!-- <component
         v-if="field.attrib === 'core_required'"
         :is="'form-boolean-field'"
         :ref="attrib"
@@ -66,7 +68,7 @@
         :resource-name="modelKey"
         :v-model="coreRequiredBools[attrib]"
       >
-      </component>
+      </component> -->
       <component
         v-else-if="attrib === 'order_type'"
         :is="'form-' + field.component"
@@ -94,8 +96,14 @@
 </template>
 
 <script>
+import FormCoreRequired from "./FormCoreRequired.vue";
+
 export default {
   name: "relationship-form-item",
+
+  components: {
+    FormCoreRequired,
+  },
 
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
