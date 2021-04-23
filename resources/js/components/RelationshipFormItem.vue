@@ -97,7 +97,9 @@ export default {
 
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
-  created() {},
+  created() {
+    console.log("hello");
+  },
 
   computed: {
     fields() {
