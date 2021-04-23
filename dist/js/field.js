@@ -33559,6 +33559,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "relationship-form-item",
@@ -33773,6 +33776,8 @@ var render = function() {
                   _vm._v("\n      " + _vm._s(field.helpText) + "\n    ")
                 ])
               : _vm._e(),
+            _vm._v(" "),
+            _c("p", [_vm._v("\n      " + _vm._s(attrib) + "\n    ")]),
             _vm._v(" "),
             field.attrib === "core_required"
               ? _c("form-boolean-field", {

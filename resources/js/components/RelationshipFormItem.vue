@@ -54,6 +54,9 @@
       <div v-if="field.helpText" class="help-text ml-8 mt-2">
         {{ field.helpText }}
       </div>
+      <p>
+        {{ attrib }}
+      </p>
       <component
         v-if="field.attrib === 'core_required'"
         :is="'form-boolean-field'"
