@@ -63,7 +63,7 @@
         :errors="errors"
         :resource-id="modelId"
         :resource-name="modelKey"
-        :v-model="coreRequiredBools[field.attribute]"
+        :v-model="field.value"
       >
       </component>
       <component
@@ -159,11 +159,12 @@ export default {
       console.log(data);
       console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.coreRequiredBools[this.fields.core_required.attribute] = false;
-        console.log(
-          this.coreRequiredBools[this.fields.core_required.attribute]
-        );
-        console.log(this.coreRequiredBools);
+        this.fields.core_required.value = false;
+        // this.coreRequiredBools[this.fields.core_required.attribute] = false;
+        // console.log(
+        //   this.coreRequiredBools[this.fields.core_required.attribute]
+        // );
+        // console.log(this.coreRequiredBools);
         // this.fields.core_required.value = false;
       }
     },

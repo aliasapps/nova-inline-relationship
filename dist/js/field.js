@@ -33612,9 +33612,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       console.log(data);
       console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.coreRequiredBools[this.fields.core_required.attribute] = false;
-        console.log(this.coreRequiredBools[this.fields.core_required.attribute]);
-        console.log(this.coreRequiredBools);
+        this.fields.core_required.value = false;
+        // this.coreRequiredBools[this.fields.core_required.attribute] = false;
+        // console.log(
+        //   this.coreRequiredBools[this.fields.core_required.attribute]
+        // );
+        // console.log(this.coreRequiredBools);
         // this.fields.core_required.value = false;
       }
     },
@@ -33786,7 +33789,7 @@ var render = function() {
                     errors: _vm.errors,
                     "resource-id": _vm.modelId,
                     "resource-name": _vm.modelKey,
-                    "v-model": _vm.coreRequiredBools[field.attribute]
+                    "v-model": field.value
                   }
                 })
               : attrib === "order_type"
