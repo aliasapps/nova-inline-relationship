@@ -216,10 +216,10 @@ export default {
     },
   },
 
-  data() {
-    return {
-      coreRequiredBools: [],
-    };
-  },
+  // data() {
+  //   return {
+  //     coreRequiredBools: [],
+  //   };
+  // },
 };
 </script>
