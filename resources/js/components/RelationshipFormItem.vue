@@ -63,18 +63,7 @@
         :orderType="field.parentAttribute"
       >
       </form-core-required>
-      <!-- <component
-        v-if="field.attrib === 'core_required'"
-        :is="'form-boolean-field'"
-        :ref="attrib"
-        :field="field"
-        :full-width-content="true"
-        :errors="errors"
-        :resource-id="modelId"
-        :resource-name="modelKey"
-        :v-model="coreRequiredBools[attrib]"
-      >
-      </component> -->
+
       <component
         v-else-if="attrib === 'order_type'"
         :is="'form-' + field.component"
@@ -117,10 +106,6 @@ export default {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          // Nova.$on(
-          //   this.field.attribute + "_" + this.id + "_" + attrib + "-change",
-          //   this.handleOrderType
-          // );
           return {
             ...{
               options: {},
@@ -157,18 +142,6 @@ export default {
   },
 
   methods: {
-    // handleOrderType(data) {
-    //   // console.log(data);
-    //   // this.orderType = data;
-    //   // console.log(this.fields.core_required);
-    //   if (data === "WARRANTY") {
-    //     // this.coreRequiredBools.checked = true;
-    //     // this.fields.core_required.value = true;
-    //     // console.log(this.fields.core_required);
-    //     // console.log(this.coreRequiredBools);
-    //   }
-    // },
-
     getValueFromChildren() {
       return _.tap(new FormData(), (formData) => {
         _(this.$refs).each((item) => {
@@ -215,13 +188,6 @@ export default {
     removeItem() {
       this.$emit("deleted", this.id);
     },
-  },
-
-  data() {
-    return {
-      coreRequiredBools: [],
-      orderType: "",
-    };
   },
 };
 </script>

@@ -33559,17 +33559,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -33587,10 +33576,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       var _this = this;
 
       return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
-        // Nova.$on(
-        //   this.field.attribute + "_" + this.id + "_" + attrib + "-change",
-        //   this.handleOrderType
-        // );
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {
@@ -33615,18 +33600,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
 
   methods: {
-    // handleOrderType(data) {
-    //   // console.log(data);
-    //   // this.orderType = data;
-    //   // console.log(this.fields.core_required);
-    //   if (data === "WARRANTY") {
-    //     // this.coreRequiredBools.checked = true;
-    //     // this.fields.core_required.value = true;
-    //     // console.log(this.fields.core_required);
-    //     // console.log(this.coreRequiredBools);
-    //   }
-    // },
-
     getValueFromChildren: function getValueFromChildren() {
       var _this2 = this;
 
@@ -33668,13 +33641,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     removeItem: function removeItem() {
       this.$emit("deleted", this.id);
     }
-  },
-
-  data: function data() {
-    return {
-      coreRequiredBools: [],
-      orderType: ""
-    };
   }
 });
 
@@ -34045,7 +34011,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created: function created() {
-    // console.log(`${this.orderType}_order_type-change`);
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
   },
   data: function data() {
