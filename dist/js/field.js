@@ -33659,13 +33659,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     removeItem: function removeItem() {
       this.$emit("deleted", this.id);
     }
-  }
+  },
 
-  // data() {
-  //   return {
-  //     coreRequiredBools: [],
-  //   };
-  // },
+  data: function data() {
+    return {
+      coreRequiredBools: []
+    };
+  }
 });
 
 /***/ }),
