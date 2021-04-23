@@ -160,9 +160,10 @@ export default {
       console.log(data);
       // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.coreRequiredBools.checked = true;
+        // this.coreRequiredBools.checked = true;
+        this.fields.core_required.value = true;
         console.log(this.fields.core_required);
-        console.log(this.coreRequiredBools);
+        // console.log(this.coreRequiredBools);
       }
     },
 
