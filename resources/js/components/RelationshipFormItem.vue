@@ -99,6 +99,7 @@ export default {
 
   created() {
     console.log("hello");
+    Nova.$on("order_type-change", (data) => console.log(data));
   },
 
   computed: {
