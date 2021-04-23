@@ -33569,6 +33569,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -33626,6 +33627,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   methods: {
     handleOrderType: function handleOrderType(data) {
       console.log(data);
+      this.orderType = data;
       // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
         // this.coreRequiredBools.checked = true;
@@ -33679,7 +33681,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
   data: function data() {
     return {
-      coreRequiredBools: []
+      coreRequiredBools: [],
+      orderType: ""
     };
   }
 });
@@ -33796,7 +33799,8 @@ var render = function() {
                   attrs: {
                     field: field,
                     "resource-id": _vm.modelId,
-                    "resource-name": _vm.modelKey
+                    "resource-name": _vm.modelKey,
+                    orderType: _vm.orderType
                   }
                 })
               : attrib === "order_type"
@@ -34046,7 +34050,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
 
-  props: ["resourceName", "resourceId", "field"],
+  props: ["resourceName", "resourceId", "field", "orderType"],
 
   created: function created() {
     console.log("formcore");
@@ -34058,6 +34062,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
 
+
+  computed: {
+    orderType: function (_orderType) {
+      function orderType() {
+        return _orderType.apply(this, arguments);
+      }
+
+      orderType.toString = function () {
+        return _orderType.toString();
+      };
+
+      return orderType;
+    }(function () {
+      console.log(orderType);
+      return this.orderType;
+    })
+  },
 
   methods: {
     handleOrderType: function handleOrderType(data) {

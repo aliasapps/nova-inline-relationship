@@ -21,7 +21,7 @@ import { FormField, HandlesValidationErrors } from "laravel-nova";
 export default {
   mixins: [FormField, HandlesValidationErrors],
 
-  props: ["resourceName", "resourceId", "field"],
+  props: ["resourceName", "resourceId", "field", "orderType"],
 
   created() {
     console.log("formcore");
@@ -32,6 +32,13 @@ export default {
     return {
       isDisabled: false,
     };
+  },
+
+  computed: {
+    orderType() {
+      console.log(orderType);
+      return this.orderType;
+    },
   },
 
   methods: {

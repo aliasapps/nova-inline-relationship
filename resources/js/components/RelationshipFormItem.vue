@@ -60,6 +60,7 @@
         :field="field"
         :resource-id="modelId"
         :resource-name="modelKey"
+        :orderType="orderType"
       >
       </form-core-required>
       <!-- <component
@@ -171,6 +172,7 @@ export default {
   methods: {
     handleOrderType(data) {
       console.log(data);
+      this.orderType = data;
       // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
         // this.coreRequiredBools.checked = true;
@@ -231,6 +233,7 @@ export default {
   data() {
     return {
       coreRequiredBools: [],
+      orderType: "",
     };
   },
 };
