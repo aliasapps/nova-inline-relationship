@@ -34044,6 +34044,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -34054,8 +34055,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   created: function created() {
     console.log("formcore");
-    console.log(orderType);
-    // Nova.$on("order_type-change", this.handleOrderType);
+    // console.log(orderType);
+    Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
   data: function data() {
     return {
@@ -34083,7 +34084,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     handleOrderType: function handleOrderType(data) {
-      // console.log(data);
+      console.log(data);
       if (data === "REBUILD" || data === "RETURN" || data === "CHECK_AND_REPORT") {
         this.isDisabled = true;
         this.value = false;
@@ -34129,6 +34130,14 @@ var render = function() {
     [
       _c("template", { slot: "field" }, [
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.value,
+              expression: "value"
+            }
+          ],
           staticClass: "checkbox",
           class: {
             "bg-gray-300": _vm.isDisabled
@@ -34138,6 +34147,30 @@ var render = function() {
             type: "checkbox",
             disabled: _vm.isDisabled,
             placeholder: _vm.field.name
+          },
+          domProps: {
+            checked: Array.isArray(_vm.value)
+              ? _vm._i(_vm.value, null) > -1
+              : _vm.value
+          },
+          on: {
+            change: function($event) {
+              var $$a = _vm.value,
+                $$el = $event.target,
+                $$c = $$el.checked ? true : false
+              if (Array.isArray($$a)) {
+                var $$v = null,
+                  $$i = _vm._i($$a, $$v)
+                if ($$el.checked) {
+                  $$i < 0 && (_vm.value = $$a.concat([$$v]))
+                } else {
+                  $$i > -1 &&
+                    (_vm.value = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                }
+              } else {
+                _vm.value = $$c
+              }
+            }
           }
         })
       ])

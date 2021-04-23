@@ -10,6 +10,7 @@
           'bg-gray-300': isDisabled,
         }"
         :placeholder="field.name"
+        v-model="value"
       />
     </template>
   </default-field>
@@ -25,8 +26,8 @@ export default {
 
   created() {
     console.log("formcore");
-    console.log(orderType);
-    // Nova.$on("order_type-change", this.handleOrderType);
+    // console.log(orderType);
+    Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
 
   data() {
@@ -44,7 +45,7 @@ export default {
 
   methods: {
     handleOrderType(data) {
-      // console.log(data);
+      console.log(data);
       if (
         data === "REBUILD" ||
         data === "RETURN" ||
