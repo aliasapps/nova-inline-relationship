@@ -98,14 +98,18 @@ export default {
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
   created() {
-    console.log("hello");
-    Nova.$on("order_products_0_order_type-change", this.handleOrderType);
+    // console.log("hello");
+    // Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
 
   computed: {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
+          Nova.$on(
+            this.field.attribute + "_" + this.id + "_" + attrib,
+            this.handleOrderType
+          );
           return {
             ...{
               options: {},

@@ -33565,8 +33565,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
   created: function created() {
-    console.log("hello");
-    Nova.$on("order_products_0_order_type-change", this.handleOrderType);
+    // console.log("hello");
+    // Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
 
 
@@ -33575,6 +33575,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       var _this = this;
 
       return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
+        Nova.$on(_this.field.attribute + "_" + _this.id + "_" + attrib, _this.handleOrderType);
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {
