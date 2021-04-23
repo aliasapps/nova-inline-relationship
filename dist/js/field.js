@@ -34029,7 +34029,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -34064,10 +34063,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     /*
      * Set the initial, internal value for the field.
      */
-    setInitialValue: function setInitialValue() {
-      this.value = this.field.value || "";
-    },
-
+    // setInitialValue() {
+    //   this.value = this.field.value || "";
+    // },
 
     /**
      * Fill the given FormData object with the field's internal value.
@@ -34098,14 +34096,6 @@ var render = function() {
     [
       _c("template", { slot: "field" }, [
         _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.value,
-              expression: "value"
-            }
-          ],
           staticClass: "checkbox",
           class: {
             "bg-gray-300": _vm.isDisabled
@@ -34115,30 +34105,6 @@ var render = function() {
             type: "checkbox",
             disabled: _vm.isDisabled,
             placeholder: _vm.field.name
-          },
-          domProps: {
-            checked: Array.isArray(_vm.value)
-              ? _vm._i(_vm.value, null) > -1
-              : _vm.value
-          },
-          on: {
-            change: function($event) {
-              var $$a = _vm.value,
-                $$el = $event.target,
-                $$c = $$el.checked ? true : false
-              if (Array.isArray($$a)) {
-                var $$v = null,
-                  $$i = _vm._i($$a, $$v)
-                if ($$el.checked) {
-                  $$i < 0 && (_vm.value = $$a.concat([$$v]))
-                } else {
-                  $$i > -1 &&
-                    (_vm.value = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-                }
-              } else {
-                _vm.value = $$c
-              }
-            }
           }
         })
       ])

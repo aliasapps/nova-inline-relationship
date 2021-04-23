@@ -10,7 +10,6 @@
           'bg-gray-300': isDisabled,
         }"
         :placeholder="field.name"
-        v-model="value"
       />
     </template>
   </default-field>
@@ -53,9 +52,9 @@ export default {
     /*
      * Set the initial, internal value for the field.
      */
-    setInitialValue() {
-      this.value = this.field.value || "";
-    },
+    // setInitialValue() {
+    //   this.value = this.field.value || "";
+    // },
 
     /**
      * Fill the given FormData object with the field's internal value.
