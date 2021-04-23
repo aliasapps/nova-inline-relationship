@@ -63,6 +63,7 @@
         :errors="errors"
         :resource-id="modelId"
         :resource-name="modelKey"
+        :v-model="coreRequiredBools[field.attribute]"
       >
       </component>
       <component
@@ -156,9 +157,13 @@ export default {
   methods: {
     handleOrderType(data) {
       console.log(data);
-      console.log(this.fields);
+      console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.fields.core_required.value = false;
+        this.coreRequiredBools[this.fields.core_required.attribute] = false;
+        console.log(
+          this.coreRequiredBools[this.fields.core_required.attribute]
+        );
+        // this.fields.core_required.value = false;
       }
     },
 
@@ -208,6 +213,12 @@ export default {
     removeItem() {
       this.$emit("deleted", this.id);
     },
+  },
+
+  data() {
+    return {
+      coreRequiredBools: [],
+    };
   },
 };
 </script>

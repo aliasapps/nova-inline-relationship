@@ -33558,6 +33558,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "relationship-form-item",
@@ -33609,9 +33610,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   methods: {
     handleOrderType: function handleOrderType(data) {
       console.log(data);
-      console.log(this.fields);
+      console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.fields.core_required.value = false;
+        this.coreRequiredBools[this.fields.core_required.attribute] = false;
+        console.log(this.coreRequiredBools[this.fields.core_required.attribute]);
+        // this.fields.core_required.value = false;
       }
     },
     getValueFromChildren: function getValueFromChildren() {
@@ -33655,6 +33658,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     removeItem: function removeItem() {
       this.$emit("deleted", this.id);
     }
+  },
+
+  data: function data() {
+    return {
+      coreRequiredBools: []
+    };
   }
 });
 
@@ -33775,7 +33784,8 @@ var render = function() {
                     "full-width-content": true,
                     errors: _vm.errors,
                     "resource-id": _vm.modelId,
-                    "resource-name": _vm.modelKey
+                    "resource-name": _vm.modelKey,
+                    "v-model": _vm.coreRequiredBools[field.attribute]
                   }
                 })
               : attrib === "order_type"
