@@ -159,7 +159,7 @@ export default {
       console.log(data);
       // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.coreRequiredBools.attrib = true;
+        this.coreRequiredBools.core_required = true;
         console.log(this.fields.core_required);
         console.log(this.coreRequiredBools);
       }
