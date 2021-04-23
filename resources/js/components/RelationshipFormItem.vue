@@ -60,7 +60,7 @@
         :field="field"
         :resource-id="modelId"
         :resource-name="modelKey"
-        :orderType="field.attribute"
+        :orderType="field.parentAttribute"
       >
       </form-core-required>
       <!-- <component
@@ -127,6 +127,7 @@ export default {
             },
             ...this.value[attrib].meta,
             ...{
+              parentAttribute: this.field.attribute,
               helpText: this.value[attrib].meta.helpText,
               attribute:
                 this.value[attrib].meta.component === "file-field"
