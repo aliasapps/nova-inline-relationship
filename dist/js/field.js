@@ -33560,8 +33560,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "relationship-form-item",
@@ -33615,7 +33613,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       console.log(data);
       // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.coreRequiredBools.core_required.checked = true;
+        this.coreRequiredBools.checked = true;
         console.log(this.fields.core_required);
         console.log(this.coreRequiredBools);
       }
@@ -33776,8 +33774,6 @@ var render = function() {
                   _vm._v("\n      " + _vm._s(field.helpText) + "\n    ")
                 ])
               : _vm._e(),
-            _vm._v(" "),
-            _c("p", [_vm._v("\n      " + _vm._s(attrib) + "\n    ")]),
             _vm._v(" "),
             field.attrib === "core_required"
               ? _c("form-boolean-field", {

@@ -54,9 +54,7 @@
       <div v-if="field.helpText" class="help-text ml-8 mt-2">
         {{ field.helpText }}
       </div>
-      <p>
-        {{ attrib }}
-      </p>
+
       <component
         v-if="field.attrib === 'core_required'"
         :is="'form-boolean-field'"
@@ -162,7 +160,7 @@ export default {
       console.log(data);
       // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
-        this.coreRequiredBools.core_required.checked = true;
+        this.coreRequiredBools.checked = true;
         console.log(this.fields.core_required);
         console.log(this.coreRequiredBools);
       }
