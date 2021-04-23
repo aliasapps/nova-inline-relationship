@@ -33566,7 +33566,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
   created: function created() {
     console.log("hello");
-    Nova.$on("order_type-change", function (data) {
+    Nova.$on("order_products_0_order_type-change", function (data) {
       return console.log(data);
     });
   },
