@@ -33594,7 +33594,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {
-          parentAttribute: _this.field.attribute + "_" + _this.id + "_",
+          parentAttribute: _this.field.attribute + "_" + _this.id,
           helpText: _this.value[attrib].meta.helpText,
           attribute: _this.value[attrib].meta.component === "file-field" ? attrib + "?" + _this.id : _this.field.attribute + "_" + _this.id + "_" + attrib, // This is needed to enable delete link for file without triggering duplicate id warning
           name: _this.value[attrib].meta.singularLabel,

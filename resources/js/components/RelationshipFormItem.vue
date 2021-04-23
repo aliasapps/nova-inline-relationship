@@ -127,7 +127,7 @@ export default {
             },
             ...this.value[attrib].meta,
             ...{
-              parentAttribute: this.field.attribute + "_" + this.id + "_",
+              parentAttribute: this.field.attribute + "_" + this.id,
               helpText: this.value[attrib].meta.helpText,
               attribute:
                 this.value[attrib].meta.component === "file-field"
