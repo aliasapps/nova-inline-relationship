@@ -163,6 +163,7 @@ export default {
         console.log(
           this.coreRequiredBools[this.fields.core_required.attribute]
         );
+        console.log(this.coreRequiredBools);
         // this.fields.core_required.value = false;
       }
     },
