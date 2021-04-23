@@ -33614,6 +33614,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       if (data === "WARRANTY") {
         this.coreRequiredBools.attrib = true;
         console.log(this.fields.core_required);
+        console.log(this.coreRequiredBools);
       }
     },
     getValueFromChildren: function getValueFromChildren() {
