@@ -25,8 +25,7 @@ export default {
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created() {
-    console.log("formcore");
-    // console.log(orderType);
+    console.log(this.orderType);
     Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
 
@@ -35,13 +34,6 @@ export default {
       isDisabled: false,
     };
   },
-
-  //   computed: {
-  //     orderType() {
-  //       console.log(orderType);
-  //       return this.orderType;
-  //     },
-  //   },
 
   methods: {
     handleOrderType(data) {
@@ -61,9 +53,9 @@ export default {
     /*
      * Set the initial, internal value for the field.
      */
-    // setInitialValue() {
-    //   this.value = this.field.value || "";
-    // },
+    setInitialValue() {
+      this.value = this.field.value || "";
+    },
 
     /**
      * Fill the given FormData object with the field's internal value.

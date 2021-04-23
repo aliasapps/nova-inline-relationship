@@ -113,28 +113,14 @@ export default {
 
   props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
 
-  created() {
-    // console.log("hello");
-    // Nova.$on("order_products_0_order_type-change", this.handleOrderType);
-  },
-
-  beforeRouteLeave(to, from, next) {
-    /**
-     * remove Nova.$on listeners TODO
-     */
-    // console.log("navigated away");
-    // clearInterval(this.interval);
-    // next();
-  },
-
   computed: {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          Nova.$on(
-            this.field.attribute + "_" + this.id + "_" + attrib + "-change",
-            this.handleOrderType
-          );
+          // Nova.$on(
+          //   this.field.attribute + "_" + this.id + "_" + attrib + "-change",
+          //   this.handleOrderType
+          // );
           return {
             ...{
               options: {},
@@ -170,17 +156,17 @@ export default {
   },
 
   methods: {
-    handleOrderType(data) {
-      // console.log(data);
-      // this.orderType = data;
-      // console.log(this.fields.core_required);
-      if (data === "WARRANTY") {
-        // this.coreRequiredBools.checked = true;
-        // this.fields.core_required.value = true;
-        // console.log(this.fields.core_required);
-        // console.log(this.coreRequiredBools);
-      }
-    },
+    // handleOrderType(data) {
+    //   // console.log(data);
+    //   // this.orderType = data;
+    //   // console.log(this.fields.core_required);
+    //   if (data === "WARRANTY") {
+    //     // this.coreRequiredBools.checked = true;
+    //     // this.fields.core_required.value = true;
+    //     // console.log(this.fields.core_required);
+    //     // console.log(this.coreRequiredBools);
+    //   }
+    // },
 
     getValueFromChildren() {
       return _.tap(new FormData(), (formData) => {
