@@ -25,7 +25,6 @@ export default {
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created() {
-    console.log("hai");
     console.log(this.orderType);
     Nova.$on("order_products_0_order_type-change", this.handleOrderType);
   },
