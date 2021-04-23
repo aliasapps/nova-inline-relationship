@@ -33626,13 +33626,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
   methods: {
     handleOrderType: function handleOrderType(data) {
-      console.log(data);
-      this.orderType = data;
+      // console.log(data);
+      // this.orderType = data;
       // console.log(this.fields.core_required);
       if (data === "WARRANTY") {
         // this.coreRequiredBools.checked = true;
         // this.fields.core_required.value = true;
-        console.log(this.fields.core_required);
+        // console.log(this.fields.core_required);
         // console.log(this.coreRequiredBools);
       }
     },
@@ -34054,6 +34054,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   created: function created() {
     console.log("formcore");
+    console.log(orderType);
     // Nova.$on("order_type-change", this.handleOrderType);
   },
   data: function data() {

@@ -25,6 +25,7 @@ export default {
 
   created() {
     console.log("formcore");
+    console.log(orderType);
     // Nova.$on("order_type-change", this.handleOrderType);
   },
 
