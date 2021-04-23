@@ -25,7 +25,7 @@ export default {
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created() {
-    console.log(`${this.orderType}_order_type-change`);
+    // console.log(`${this.orderType}_order_type-change`);
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
   },
 
@@ -37,7 +37,7 @@ export default {
 
   methods: {
     handleOrderType(data) {
-      console.log(data);
+      //   console.log(data);
       if (
         data === "REBUILD" ||
         data === "RETURN" ||

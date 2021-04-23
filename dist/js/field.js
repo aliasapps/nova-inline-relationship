@@ -34045,7 +34045,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created: function created() {
-    console.log(this.orderType + "_order_type-change");
+    // console.log(`${this.orderType}_order_type-change`);
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
   },
   data: function data() {
@@ -34057,7 +34057,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     handleOrderType: function handleOrderType(data) {
-      console.log(data);
+      //   console.log(data);
       if (data === "REBUILD" || data === "RETURN" || data === "CHECK_AND_REPORT") {
         this.isDisabled = true;
         this.value = false;
