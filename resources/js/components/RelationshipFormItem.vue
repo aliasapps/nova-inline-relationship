@@ -60,7 +60,7 @@
         :field="field"
         :resource-id="modelId"
         :resource-name="modelKey"
-        :orderType="orderType"
+        :orderType="field.attribute"
       >
       </form-core-required>
       <!-- <component

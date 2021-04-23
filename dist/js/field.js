@@ -33790,7 +33790,7 @@ var render = function() {
                     field: field,
                     "resource-id": _vm.modelId,
                     "resource-name": _vm.modelKey,
-                    orderType: _vm.orderType
+                    orderType: field.attribute
                   }
                 })
               : attrib === "order_type"
