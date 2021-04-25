@@ -168,7 +168,7 @@ export default {
     fill(formData, parentAttrib) {
       formData.append(`${parentAttrib}[${this.id}][modelId]`, this.modelId);
       this.getValueFromChildren().forEach((value, key) => {
-        console.log(this.getValueFromChildren);
+        console.log("value: ", value, "parentAttrib: ", parentAttrib);
         let keyParts = key.split("_");
 
         if (keyParts.length === 1) {
