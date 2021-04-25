@@ -159,9 +159,16 @@ export default {
           } else if (item[0].field.component === "boolean-field") {
             formData.append(item[0].field.attribute, item[0].trueValue);
           } else if (item[0].field.component === "core-required") {
-            console.log(item[0]);
-            console.log(item[0].field.attribute, item[0].trueValue);
+            console.log({
+              message: "core_required",
+              value: item[0].value,
+              trueValue: item[0].trueValue,
+            });
           } else {
+            console.log({
+              value: item[0].value,
+              trueValue: item[0].trueValue,
+            });
             item[0].fill(formData);
           }
         });
