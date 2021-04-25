@@ -33559,6 +33559,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -33605,7 +33606,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
       return _.tap(new FormData(), function (formData) {
         _(_this2.$refs).each(function (item) {
-          // console.log({ item });
+          console.log({ item: item });
           if (item[0].field.component === "file-field") {
             if (item[0].file) {
               formData.append(item[0].field.attrib, item[0].file, item[0].fileName);
@@ -33625,7 +33626,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
       formData.append(parentAttrib + "[" + this.id + "][modelId]", this.modelId);
       this.getValueFromChildren().forEach(function (value, key) {
-        console.log("value: ", value, "key: ", key, "parentAttrib: ", parentAttrib);
+        // console.log(
+        //   "value: ",
+        //   value,
+        //   "key: ",
+        //   key,
+        //   "parentAttrib: ",
+        //   parentAttrib
+        // );
         var keyParts = key.split("_");
 
         if (keyParts.length === 1) {
@@ -33636,9 +33644,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         var parentParts = parentAttrib.split("_");
         var attrib = keyParts.slice(parentParts.length + 1).join("_");
 
-        console.log({
-          formData: parentAttrib + "[" + _this3.id + "][values][" + attrib + "]"
-        });
+        // console.log({
+        //   formData: `${parentAttrib}[${this.id}][values][${attrib}]`,
+        // });
 
         formData.append(parentAttrib + "[" + _this3.id + "][values][" + attrib + "]", value);
       });
@@ -33758,6 +33766,8 @@ var render = function() {
             _vm._v(" "),
             field.attrib === "core_required"
               ? _c("form-core-required", {
+                  ref: attrib,
+                  refInFor: true,
                   attrs: {
                     field: field,
                     "resource-id": _vm.modelId,

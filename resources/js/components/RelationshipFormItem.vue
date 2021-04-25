@@ -58,6 +58,7 @@
       <form-core-required
         v-if="field.attrib === 'core_required'"
         :field="field"
+        :ref="attrib"
         :resource-id="modelId"
         :resource-name="modelKey"
         :orderType="field.parentAttribute"
@@ -145,7 +146,7 @@ export default {
     getValueFromChildren() {
       return _.tap(new FormData(), (formData) => {
         _(this.$refs).each((item) => {
-          // console.log({ item });
+          console.log({ item });
           if (item[0].field.component === "file-field") {
             if (item[0].file) {
               formData.append(
@@ -168,14 +169,14 @@ export default {
     fill(formData, parentAttrib) {
       formData.append(`${parentAttrib}[${this.id}][modelId]`, this.modelId);
       this.getValueFromChildren().forEach((value, key) => {
-        console.log(
-          "value: ",
-          value,
-          "key: ",
-          key,
-          "parentAttrib: ",
-          parentAttrib
-        );
+        // console.log(
+        //   "value: ",
+        //   value,
+        //   "key: ",
+        //   key,
+        //   "parentAttrib: ",
+        //   parentAttrib
+        // );
         let keyParts = key.split("_");
 
         if (keyParts.length === 1) {
@@ -186,9 +187,9 @@ export default {
         let parentParts = parentAttrib.split("_");
         let attrib = keyParts.slice(parentParts.length + 1).join("_");
 
-        console.log({
-          formData: `${parentAttrib}[${this.id}][values][${attrib}]`,
-        });
+        // console.log({
+        //   formData: `${parentAttrib}[${this.id}][values][${attrib}]`,
+        // });
 
         formData.append(
           `${parentAttrib}[${this.id}][values][${attrib}]`,
