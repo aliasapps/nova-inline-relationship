@@ -33625,6 +33625,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
       formData.append(parentAttrib + "[" + this.id + "][modelId]", this.modelId);
       this.getValueFromChildren().forEach(function (value, key) {
+        console.log(_this3.getValueFromChildren);
         var keyParts = key.split("_");
 
         if (keyParts.length === 1) {
