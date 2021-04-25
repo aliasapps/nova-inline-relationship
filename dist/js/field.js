@@ -33606,7 +33606,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
       return _.tap(new FormData(), function (formData) {
         _(_this2.$refs).each(function (item) {
-          // console.log({ item });
+          console.log("item: ", item);
+          console.log("component: ", item[0].field.component);
           if (item[0].field.component === "file-field") {
             if (item[0].file) {
               formData.append(item[0].field.attrib, item[0].file, item[0].fileName);
@@ -33616,7 +33617,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
           } else if (item[0].field.component === "boolean-field") {
             formData.append(item[0].field.attribute, item[0].trueValue);
           } else {
-            console.log("else fill: ", formData);
             item[0].fill(formData);
           }
         });
