@@ -33467,6 +33467,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -33615,16 +33617,22 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
           } else if (item[0].field.component === "boolean-field") {
             formData.append(item[0].field.attribute, item[0].trueValue);
           } else if (item[0].field.component === "core-required") {
+            var _console$log;
+
+            console.log((_console$log = {
+              message: "core_required",
+              attribute: item[0].field.attribute
+            }, _defineProperty(_console$log, "attribute", item[0].field.attribute), _defineProperty(_console$log, "value", item[0].value), _defineProperty(_console$log, "trueValue", item[0].trueValue), _console$log));
             formData.append("core_required", item[0].value ? 1 : 0);
           } else {
             item[0].fill(formData);
+            console.log({
+              // message: "core_required",
+              attribute: item[0].field.attribute,
+              value: item[0].value,
+              trueValue: item[0].trueValue
+            });
           }
-          console.log({
-            // message: "core_required",
-            attribute: item[0].field.attribute,
-            value: item[0].value,
-            trueValue: item[0].trueValue
-          });
         });
       });
     },
