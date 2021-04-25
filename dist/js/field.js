@@ -33615,16 +33615,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
           } else if (item[0].field.component === "boolean-field") {
             formData.append(item[0].field.attribute, item[0].trueValue);
           } else if (item[0].field.component === "core-required") {
-            console.log({
-              message: "core_required",
-              value: item[0].value,
-              trueValue: item[0].trueValue
-            });
+            // console.log({
+            //   message: "core_required",
+            //   value: item[0].value,
+            //   trueValue: item[0].trueValue,
+            // });
+            formData.append("core_required", item[0].value ? 1 : 0);
           } else {
-            console.log({
-              value: item[0].value,
-              trueValue: item[0].trueValue
-            });
             item[0].fill(formData);
           }
         });
@@ -33635,14 +33632,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
       formData.append(parentAttrib + "[" + this.id + "][modelId]", this.modelId);
       this.getValueFromChildren().forEach(function (value, key) {
-        // console.log(
-        //   "value: ",
-        //   value,
-        //   "key: ",
-        //   key,
-        //   "parentAttrib: ",
-        //   parentAttrib
-        // );
         var keyParts = key.split("_");
 
         if (keyParts.length === 1) {
@@ -33652,11 +33641,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
         var parentParts = parentAttrib.split("_");
         var attrib = keyParts.slice(parentParts.length + 1).join("_");
-
-        // console.log({
-        //   formData: `${parentAttrib}[${this.id}][values][${attrib}]`,
-        //   value,
-        // });
 
         formData.append(parentAttrib + "[" + _this3.id + "][values][" + attrib + "]", value);
       });

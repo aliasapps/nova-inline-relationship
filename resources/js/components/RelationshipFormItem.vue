@@ -159,16 +159,13 @@ export default {
           } else if (item[0].field.component === "boolean-field") {
             formData.append(item[0].field.attribute, item[0].trueValue);
           } else if (item[0].field.component === "core-required") {
-            console.log({
-              message: "core_required",
-              value: item[0].value,
-              trueValue: item[0].trueValue,
-            });
+            // console.log({
+            //   message: "core_required",
+            //   value: item[0].value,
+            //   trueValue: item[0].trueValue,
+            // });
+            formData.append("core_required", item[0].value ? 1 : 0);
           } else {
-            console.log({
-              value: item[0].value,
-              trueValue: item[0].trueValue,
-            });
             item[0].fill(formData);
           }
         });
@@ -178,14 +175,6 @@ export default {
     fill(formData, parentAttrib) {
       formData.append(`${parentAttrib}[${this.id}][modelId]`, this.modelId);
       this.getValueFromChildren().forEach((value, key) => {
-        // console.log(
-        //   "value: ",
-        //   value,
-        //   "key: ",
-        //   key,
-        //   "parentAttrib: ",
-        //   parentAttrib
-        // );
         let keyParts = key.split("_");
 
         if (keyParts.length === 1) {
@@ -195,11 +184,6 @@ export default {
 
         let parentParts = parentAttrib.split("_");
         let attrib = keyParts.slice(parentParts.length + 1).join("_");
-
-        // console.log({
-        //   formData: `${parentAttrib}[${this.id}][values][${attrib}]`,
-        //   value,
-        // });
 
         formData.append(
           `${parentAttrib}[${this.id}][values][${attrib}]`,
