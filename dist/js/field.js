@@ -33615,15 +33615,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
           } else if (item[0].field.component === "boolean-field") {
             formData.append(item[0].field.attribute, item[0].trueValue);
           } else if (item[0].field.component === "core-required") {
-            // console.log({
-            //   message: "core_required",
-            //   value: item[0].value,
-            //   trueValue: item[0].trueValue,
-            // });
             formData.append("core_required", item[0].value ? 1 : 0);
           } else {
             item[0].fill(formData);
           }
+          console.log({
+            // message: "core_required",
+            attribute: item[0].field.attribute,
+            value: item[0].value,
+            trueValue: item[0].trueValue
+          });
         });
       });
     },
