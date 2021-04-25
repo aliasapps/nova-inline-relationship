@@ -60,7 +60,9 @@ export default {
      * Fill the given FormData object with the field's internal value.
      */
     fill(formData) {
-      formData.append(this.field.attribute, this.value ? 1 : 0 || "");
+      console.log(this.field.attribute, this.value);
+
+      formData.append("core_required", this.value ? 1 : 0 || "");
     },
   },
 };

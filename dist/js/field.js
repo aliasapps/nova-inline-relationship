@@ -34044,7 +34044,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
      * Fill the given FormData object with the field's internal value.
      */
     fill: function fill(formData) {
-      formData.append(this.field.attribute, this.value ? 1 : 0 || "");
+      console.log(this.field.attribute, this.value);
+
+      formData.append("core_required", this.value ? 1 : 0 || "");
     }
   }
 });
