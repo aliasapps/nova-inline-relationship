@@ -33625,7 +33625,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
       formData.append(parentAttrib + "[" + this.id + "][modelId]", this.modelId);
       this.getValueFromChildren().forEach(function (value, key) {
-        console.log("value: ", value, "parentAttrib: ", parentAttrib);
+        console.log("value: ", value, "key: ", key, "parentAttrib: ", parentAttrib);
         var keyParts = key.split("_");
 
         if (keyParts.length === 1) {
@@ -33635,6 +33635,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
         var parentParts = parentAttrib.split("_");
         var attrib = keyParts.slice(parentParts.length + 1).join("_");
+
+        console.log({
+          formData: parentAttrib + "[" + _this3.id + "][values][" + attrib + "]"
+        });
 
         formData.append(parentAttrib + "[" + _this3.id + "][values][" + attrib + "]", value);
       });
