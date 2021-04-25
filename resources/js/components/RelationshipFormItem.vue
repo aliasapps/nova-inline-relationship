@@ -166,15 +166,15 @@ export default {
               value: item[0].value,
               trueValue: item[0].trueValue,
             });
-            formData.append("core_required", item[0].value ? 1 : 0);
+            formData.append(item[0].field.attribute, item[0].value ? 1 : 0);
           } else {
             item[0].fill(formData);
-            console.log({
-              // message: "core_required",
-              attribute: item[0].field.attribute,
-              value: item[0].value,
-              trueValue: item[0].trueValue,
-            });
+            // console.log({
+            //   // message: "core_required",
+            //   attribute: item[0].field.attribute,
+            //   value: item[0].value,
+            //   trueValue: item[0].trueValue,
+            // });
           }
         });
       });
