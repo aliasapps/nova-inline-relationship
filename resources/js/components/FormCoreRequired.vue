@@ -34,12 +34,12 @@ export default {
     );
   },
 
-  data() {
-    return {
-      // isDisabled: false,
-      selectedOrderType: "",
-      selectedProductTypeId: 0,
-    };
+  data: {
+    // return {
+    // isDisabled: false,
+    selectedOrderType: "",
+    selectedProductTypeId: 0,
+    // };
   },
 
   computed: {

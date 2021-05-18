@@ -33747,14 +33747,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
     Nova.$on(this.orderType + "_product_type_id-change", this.handleProductType);
   },
-  data: function data() {
-    return {
-      // isDisabled: false,
-      selectedOrderType: "",
-      selectedProductTypeId: 0
-    };
-  },
 
+
+  data: {
+    // return {
+    // isDisabled: false,
+    selectedOrderType: "",
+    selectedProductTypeId: 0
+    // };
+  },
 
   computed: {
     isDisabled: function isDisabled() {
