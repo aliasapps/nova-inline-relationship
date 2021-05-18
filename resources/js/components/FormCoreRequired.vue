@@ -12,6 +12,8 @@
         :placeholder="field.name"
         v-model="value"
       />
+
+      <p>{{ isDisabled }}</p>
     </template>
   </default-field>
 </template>
