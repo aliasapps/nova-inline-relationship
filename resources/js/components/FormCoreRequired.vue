@@ -13,7 +13,7 @@
         v-model="value"
       />
 
-      <p>{{ isDisabled }}</p>
+      <p>{{ isDisabled() }}</p>
     </template>
   </default-field>
 </template>
@@ -34,18 +34,18 @@ export default {
     );
   },
 
-  data: {
-    // return {
-    // isDisabled: false,
-    selectedOrderType: "",
-    selectedProductTypeId: 0,
-    // };
+  data() {
+    return {
+      // isDisabled: false,
+      selectedOrderType: "",
+      selectedProductTypeId: 0,
+    };
   },
 
   computed: {
     isDisabled() {
       let disabled = false;
-      console.log("isDisabled: ", selectedOrderType);
+      console.log("isDisabled: ", this.selectedOrderType);
       console.log("isDisabled: ", this.selectedProductTypeId);
       if (
         this.selectedOrderType === "REBUILD" ||

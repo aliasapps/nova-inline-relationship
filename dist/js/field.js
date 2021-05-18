@@ -33747,20 +33747,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
     Nova.$on(this.orderType + "_product_type_id-change", this.handleProductType);
   },
-
-
-  data: {
-    // return {
-    // isDisabled: false,
-    selectedOrderType: "",
-    selectedProductTypeId: 0
-    // };
+  data: function data() {
+    return {
+      // isDisabled: false,
+      selectedOrderType: "",
+      selectedProductTypeId: 0
+    };
   },
+
 
   computed: {
     isDisabled: function isDisabled() {
       var disabled = false;
-      console.log("isDisabled: ", selectedOrderType);
+      console.log("isDisabled: ", this.selectedOrderType);
       console.log("isDisabled: ", this.selectedProductTypeId);
       if (this.selectedOrderType === "REBUILD" || this.selectedOrderType === "RETURN" || this.selectedOrderType === "CHECK_AND_REPORT") {
         disabled = true;
@@ -33880,7 +33879,7 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.isDisabled))])
+        _c("p", [_vm._v(_vm._s(_vm.isDisabled()))])
       ])
     ],
     2
