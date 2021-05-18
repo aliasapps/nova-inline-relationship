@@ -26,28 +26,61 @@ export default {
 
   created() {
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
+    Nova.$on(
+      `${this.orderType}_product_type_id-change`,
+      this.handleProductType
+    );
   },
 
   data() {
     return {
-      isDisabled: false,
+      // isDisabled: false,
+      selectedOrderType: "",
+      selectedProductTypeId: 0,
     };
+  },
+
+  computed: {
+    isDisabled() {
+      let disabled = false;
+
+      if (
+        this.orderType === "REBUILD" ||
+        this.orderType === "RETURN" ||
+        this.orderType === "CHECK_AND_REPORT"
+      ) {
+        disabled = true;
+      }
+
+      if (this.productTypeId == 5 || this.productTypeId > 6) {
+        disabled = true;
+      }
+
+      this.value = !disabled;
+
+      return disabled;
+    },
   },
 
   methods: {
     handleOrderType(data) {
-      //   console.log(data);
-      if (
-        data === "REBUILD" ||
-        data === "RETURN" ||
-        data === "CHECK_AND_REPORT"
-      ) {
-        this.isDisabled = true;
-        this.value = false;
-      } else {
-        this.isDisabled = false;
-        this.value = true;
-      }
+      console.log(data);
+      this.selectedOrderType = data;
+      // if (
+      //   data === "REBUILD" ||
+      //   data === "RETURN" ||
+      //   data === "CHECK_AND_REPORT"
+      // ) {
+      //   this.isDisabled = true;
+      //   this.value = false;
+      // } else {
+      //   this.isDisabled = false;
+      //   this.value = true;
+      // }
+    },
+    handleProductType(data) {
+      console.log(data);
+      this.selectedProductTypeId = data;
     },
     /*
      * Set the initial, internal value for the field.
