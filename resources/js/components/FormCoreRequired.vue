@@ -13,7 +13,7 @@
         v-model="value"
       />
 
-      <p>{{ isDisabled() }}</p>
+      <p>{{ isDisabled }}</p>
     </template>
   </default-field>
 </template>
