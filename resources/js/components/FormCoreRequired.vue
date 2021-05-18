@@ -43,8 +43,9 @@ export default {
   computed: {
     isDisabled() {
       let disabled = false;
-      // console.log("isDisabled: ", this.selectedOrderType);
-      // console.log("isDisabled: ", this.selectedProductTypeId);
+
+      console.log("field.value: ", this.field.value);
+
       if (
         this.selectedOrderType === "REBUILD" ||
         this.selectedOrderType === "RETURN" ||
