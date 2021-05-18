@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -174,793 +174,6 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(2);
-module.exports = __webpack_require__(21);
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Nova.booting(function (Vue) {
-    Vue.component('index-nova-inline-relationship', __webpack_require__(3));
-    Vue.component('detail-nova-inline-relationship', __webpack_require__(6));
-    Vue.component('form-nova-inline-relationship', __webpack_require__(12));
-
-    Vue.config.devtools = true;
-});
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(4)
-/* template */
-var __vue_template__ = __webpack_require__(5)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/IndexField.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-9e63f81a", Component.options)
-  } else {
-    hotAPI.reload("data-v-9e63f81a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['resourceName', 'field'],
-
-    computed: {
-        indexLabel: function indexLabel() {
-            var count = Object.keys(this.field.value).length;
-            var label = count > 1 ? this.field.pluralLabel : this.field.singularLabel;
-            return count + ' ' + label;
-        }
-    }
-});
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("span", [_vm._v(_vm._s(_vm.indexLabel))])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-9e63f81a", module.exports)
-  }
-}
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(7)
-/* template */
-var __vue_template__ = __webpack_require__(11)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/DetailField.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0224618e", Component.options)
-  } else {
-    hotAPI.reload("data-v-0224618e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RelationshipDetailItem__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RelationshipDetailItem___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__RelationshipDetailItem__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: { RelationshipDetailItem: __WEBPACK_IMPORTED_MODULE_0__RelationshipDetailItem___default.a },
-
-    props: ['field', 'resource', 'resourceId', 'resourceName'],
-
-    computed: {
-        collapsed: function collapsed() {
-            return this.field.collapsed === true;
-        },
-        value: function value() {
-            return Array.isArray(this.field.value) ? this.field.value : [];
-        }
-    }
-});
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(9)
-/* template */
-var __vue_template__ = __webpack_require__(10)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/RelationshipDetailItem.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7ddb7d87", Component.options)
-  } else {
-    hotAPI.reload("data-v-7ddb7d87", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    name: "relationship-detail-item",
-
-    props: {
-        value: Object,
-        settings: Object,
-        collapsed: {
-            type: Boolean,
-            default: false
-        },
-        label: String,
-        isSingular: Boolean,
-        id: Number,
-        modelId: Number,
-        modelKey: String
-    },
-
-    data: function data() {
-        return {
-            isCollapsed: false
-        };
-    },
-
-
-    computed: {
-        fields: function fields() {
-            var fields = _extends({}, this.value);
-
-            Object.keys(fields).map(function (attrib) {
-                fields[attrib].meta['name'] = fields[attrib].meta['singularLabel'];
-            });
-
-            return fields;
-        },
-        labelText: function labelText() {
-            return this.isSingular ? this.label : this.label + ' ' + (this.id + 1);
-        }
-    },
-
-    methods: {
-        getLabel: function getLabel(attrib) {
-            return this.getSettings(attrib, 'label') || attrib;
-        },
-        getSettings: function getSettings(attrib, key) {
-            return this.settings && this.settings.hasOwnProperty(attrib) && this.settings[attrib].hasOwnProperty(key) ? this.settings[attrib][key] : '';
-        }
-    },
-
-    watch: {
-        collapsed: function collapsed() {
-            this.isCollapsed = this.collapsed;
-        }
-    }
-});
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "card shadow-md mb-4" },
-    [
-      _c("div", { staticClass: "bg-30 flex p-2 border-b border-40" }, [
-        _c("span", [
-          _vm.isCollapsed
-            ? _c(
-                "button",
-                {
-                  staticClass: "btn btn-default btn-icon btn-white mr-3 p-1",
-                  on: {
-                    click: function($event) {
-                      _vm.isCollapsed = false
-                    }
-                  }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 24 24",
-                        width: "24",
-                        height: "24"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        staticClass: "heroicon-ui",
-                        attrs: {
-                          d:
-                            "M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"
-                        }
-                      })
-                    ]
-                  )
-                ]
-              )
-            : _c(
-                "button",
-                {
-                  staticClass: "btn btn-default btn-icon btn-white mr-3 p-1",
-                  on: {
-                    click: function($event) {
-                      _vm.isCollapsed = true
-                    }
-                  }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 24 24",
-                        width: "24",
-                        height: "24"
-                      }
-                    },
-                    [
-                      _c("path", {
-                        staticClass: "heroicon-ui",
-                        attrs: { d: "M17 11a1 1 0 0 1 0 2H7a1 1 0 0 1 0-2h10z" }
-                      })
-                    ]
-                  )
-                ]
-              )
-        ]),
-        _vm._v(" "),
-        _c("span", {
-          staticClass: "font-normal text-90 py-2 px-2",
-          domProps: { textContent: _vm._s(_vm.labelText) }
-        })
-      ]),
-      _vm._v(" "),
-      _c("transition", { attrs: { name: "slide-fade" } }, [
-        !_vm.isCollapsed
-          ? _c(
-              "div",
-              _vm._l(_vm.fields, function(parameter, attrib) {
-                return _c(
-                  "div",
-                  { key: attrib, staticClass: "w-full px-6" },
-                  [
-                    _c("detail-" + parameter.meta.component, {
-                      tag: "component",
-                      attrs: {
-                        field: parameter.meta,
-                        "resource-id": _vm.modelId,
-                        "resource-name": _vm.modelKey
-                      }
-                    })
-                  ],
-                  1
-                )
-              }),
-              0
-            )
-          : _vm._e()
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7ddb7d87", module.exports)
-  }
-}
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex border-b border-40" }, [
-    _c(
-      "div",
-      { staticClass: "w-1/4 py-4" },
-      [
-        _vm._t("default", [
-          _c("h4", {
-            staticClass: "font-normal text-80",
-            domProps: { textContent: _vm._s(_vm.field.singularLabel) }
-          })
-        ])
-      ],
-      2
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "w-3/4 py-4" }, [
-      _c(
-        "div",
-        _vm._l(_vm.value, function(item, index) {
-          return _c("relationship-detail-item", {
-            key: index,
-            attrs: {
-              id: index,
-              value: item,
-              "model-id": _vm.field.models[index] || 0,
-              "model-key": _vm.field.modelKey,
-              label: _vm.field.singularLabel,
-              "is-singular": _vm.field.singular,
-              settings: _vm.field.settings,
-              collapsed: _vm.collapsed
-            }
-          })
-        }),
-        1
-      )
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0224618e", module.exports)
-  }
-}
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(13)
-/* template */
-var __vue_template__ = __webpack_require__(20)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/FormField.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c023248a", Component.options)
-  } else {
-    hotAPI.reload("data-v-c023248a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuedraggable__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuedraggable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuedraggable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RelationshipFormItem_vue__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RelationshipFormItem_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__RelationshipFormItem_vue__);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    draggable: __WEBPACK_IMPORTED_MODULE_1_vuedraggable___default.a,
-    RelationshipFormItem: __WEBPACK_IMPORTED_MODULE_2__RelationshipFormItem_vue___default.a
-  },
-
-  mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
-
-  props: ["resourceName", "resourceId", "field"],
-
-  //   created() {
-  //     console.log("this.items: ", this.items);
-  //   },
-
-  data: function data() {
-    return {
-      id: 0,
-      items: [],
-      errorList: new __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["Errors"]()
-    };
-  },
-
-  watch: {
-    errors: function errors(_errors) {
-      var errObj = _errors.errors.hasOwnProperty(this.field.attribute) ? _errors.errors[this.field.attribute][0] : {};
-      Object.keys(errObj).forEach(function (key) {
-        errObj[key.replace(/\./g, "_")] = errObj[key];
-        delete errObj[key];
-      });
-      this.errorList = new __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["Errors"](errObj);
-    }
-  },
-
-  computed: {
-    valueAsArray: function valueAsArray() {
-      return Array.isArray(this.items) ? this.items : [];
-    }
-  },
-
-  methods: {
-    /*
-     * Set the initial, internal value for the field.
-     */
-    setInitialValue: function setInitialValue() {
-      var _this = this;
-
-      this.items = Array.isArray(this.field.value) ? this.field.value : [];
-      this.items = this.items.map(function (item, index) {
-        return {
-          id: _this.getNextId(),
-          modelId: _this.field.models[index],
-          fields: item
-        };
-      });
-
-      if (this.field.singular) {
-        this.items.splice(1);
-      }
-
-      if (this.field.addChildAtStart && this.items.length === 0) {
-        this.items.push({
-          id: this.getNextId(),
-          modelId: 0,
-          fields: _extends({}, this.field.settings)
-        });
-      }
-    },
-
-
-    /**
-     * Fill the given FormData object with the field's internal value.
-     */
-    fill: function fill(formData) {
-      try {
-        this.fillValueFromChildren(formData);
-      } catch (error) {
-        console.log(error);
-      }
-    },
-
-
-    fillValueFromChildren: function fillValueFromChildren(formData) {
-      var _this2 = this;
-
-      if (!_.isEmpty(this.$refs[0])) {
-        _(this.$refs).each(function (item) {
-          if (item && Array.isArray(item) && item[0]) {
-            item[0].fill(formData, _this2.field.attribute);
-          }
-        });
-      } else {
-        formData.append(this.field.attribute, []);
-      }
-    },
-
-    /**
-     * Update the field's internal value.
-     */
-    handleChange: function handleChange(value) {
-      this.items = Array.isArray(value) ? value : [];
-    },
-    getNextId: function getNextId() {
-      this.id += 1;
-      return this.id;
-    },
-    removeItem: function removeItem(index) {
-      var value = [].concat(_toConsumableArray(this.items));
-      value.splice(index, 1);
-      this.handleChange(value);
-    },
-    addItem: function addItem() {
-      var value = [].concat(_toConsumableArray(this.items));
-      value.push({
-        id: this.getNextId(),
-        modelId: 0,
-        fields: _extends({}, this.field.settings)
-      });
-      this.handleChange(value);
-    }
-  }
-});
-
-/***/ }),
-/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -27236,6 +26449,793 @@ if (hadRuntime) {
 });
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(3);
+module.exports = __webpack_require__(24);
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Nova.booting(function (Vue) {
+    Vue.component('index-nova-inline-relationship', __webpack_require__(4));
+    Vue.component('detail-nova-inline-relationship', __webpack_require__(7));
+    Vue.component('form-nova-inline-relationship', __webpack_require__(13));
+
+    Vue.config.devtools = true;
+});
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(5)
+/* template */
+var __vue_template__ = __webpack_require__(6)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/IndexField.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9e63f81a", Component.options)
+  } else {
+    hotAPI.reload("data-v-9e63f81a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['resourceName', 'field'],
+
+    computed: {
+        indexLabel: function indexLabel() {
+            var count = Object.keys(this.field.value).length;
+            var label = count > 1 ? this.field.pluralLabel : this.field.singularLabel;
+            return count + ' ' + label;
+        }
+    }
+});
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("span", [_vm._v(_vm._s(_vm.indexLabel))])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-9e63f81a", module.exports)
+  }
+}
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(8)
+/* template */
+var __vue_template__ = __webpack_require__(12)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/DetailField.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0224618e", Component.options)
+  } else {
+    hotAPI.reload("data-v-0224618e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RelationshipDetailItem__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RelationshipDetailItem___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__RelationshipDetailItem__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: { RelationshipDetailItem: __WEBPACK_IMPORTED_MODULE_0__RelationshipDetailItem___default.a },
+
+    props: ['field', 'resource', 'resourceId', 'resourceName'],
+
+    computed: {
+        collapsed: function collapsed() {
+            return this.field.collapsed === true;
+        },
+        value: function value() {
+            return Array.isArray(this.field.value) ? this.field.value : [];
+        }
+    }
+});
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(10)
+/* template */
+var __vue_template__ = __webpack_require__(11)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/RelationshipDetailItem.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7ddb7d87", Component.options)
+  } else {
+    hotAPI.reload("data-v-7ddb7d87", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "relationship-detail-item",
+
+    props: {
+        value: Object,
+        settings: Object,
+        collapsed: {
+            type: Boolean,
+            default: false
+        },
+        label: String,
+        isSingular: Boolean,
+        id: Number,
+        modelId: Number,
+        modelKey: String
+    },
+
+    data: function data() {
+        return {
+            isCollapsed: false
+        };
+    },
+
+
+    computed: {
+        fields: function fields() {
+            var fields = _extends({}, this.value);
+
+            Object.keys(fields).map(function (attrib) {
+                fields[attrib].meta['name'] = fields[attrib].meta['singularLabel'];
+            });
+
+            return fields;
+        },
+        labelText: function labelText() {
+            return this.isSingular ? this.label : this.label + ' ' + (this.id + 1);
+        }
+    },
+
+    methods: {
+        getLabel: function getLabel(attrib) {
+            return this.getSettings(attrib, 'label') || attrib;
+        },
+        getSettings: function getSettings(attrib, key) {
+            return this.settings && this.settings.hasOwnProperty(attrib) && this.settings[attrib].hasOwnProperty(key) ? this.settings[attrib][key] : '';
+        }
+    },
+
+    watch: {
+        collapsed: function collapsed() {
+            this.isCollapsed = this.collapsed;
+        }
+    }
+});
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "card shadow-md mb-4" },
+    [
+      _c("div", { staticClass: "bg-30 flex p-2 border-b border-40" }, [
+        _c("span", [
+          _vm.isCollapsed
+            ? _c(
+                "button",
+                {
+                  staticClass: "btn btn-default btn-icon btn-white mr-3 p-1",
+                  on: {
+                    click: function($event) {
+                      _vm.isCollapsed = false
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        viewBox: "0 0 24 24",
+                        width: "24",
+                        height: "24"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        staticClass: "heroicon-ui",
+                        attrs: {
+                          d:
+                            "M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"
+                        }
+                      })
+                    ]
+                  )
+                ]
+              )
+            : _c(
+                "button",
+                {
+                  staticClass: "btn btn-default btn-icon btn-white mr-3 p-1",
+                  on: {
+                    click: function($event) {
+                      _vm.isCollapsed = true
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        viewBox: "0 0 24 24",
+                        width: "24",
+                        height: "24"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        staticClass: "heroicon-ui",
+                        attrs: { d: "M17 11a1 1 0 0 1 0 2H7a1 1 0 0 1 0-2h10z" }
+                      })
+                    ]
+                  )
+                ]
+              )
+        ]),
+        _vm._v(" "),
+        _c("span", {
+          staticClass: "font-normal text-90 py-2 px-2",
+          domProps: { textContent: _vm._s(_vm.labelText) }
+        })
+      ]),
+      _vm._v(" "),
+      _c("transition", { attrs: { name: "slide-fade" } }, [
+        !_vm.isCollapsed
+          ? _c(
+              "div",
+              _vm._l(_vm.fields, function(parameter, attrib) {
+                return _c(
+                  "div",
+                  { key: attrib, staticClass: "w-full px-6" },
+                  [
+                    _c("detail-" + parameter.meta.component, {
+                      tag: "component",
+                      attrs: {
+                        field: parameter.meta,
+                        "resource-id": _vm.modelId,
+                        "resource-name": _vm.modelKey
+                      }
+                    })
+                  ],
+                  1
+                )
+              }),
+              0
+            )
+          : _vm._e()
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7ddb7d87", module.exports)
+  }
+}
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "flex border-b border-40" }, [
+    _c(
+      "div",
+      { staticClass: "w-1/4 py-4" },
+      [
+        _vm._t("default", [
+          _c("h4", {
+            staticClass: "font-normal text-80",
+            domProps: { textContent: _vm._s(_vm.field.singularLabel) }
+          })
+        ])
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "w-3/4 py-4" }, [
+      _c(
+        "div",
+        _vm._l(_vm.value, function(item, index) {
+          return _c("relationship-detail-item", {
+            key: index,
+            attrs: {
+              id: index,
+              value: item,
+              "model-id": _vm.field.models[index] || 0,
+              "model-key": _vm.field.modelKey,
+              label: _vm.field.singularLabel,
+              "is-singular": _vm.field.singular,
+              settings: _vm.field.settings,
+              collapsed: _vm.collapsed
+            }
+          })
+        }),
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0224618e", module.exports)
+  }
+}
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(14)
+/* template */
+var __vue_template__ = __webpack_require__(23)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/FormField.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-c023248a", Component.options)
+  } else {
+    hotAPI.reload("data-v-c023248a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuedraggable__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuedraggable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuedraggable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RelationshipFormItem_vue__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__RelationshipFormItem_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__RelationshipFormItem_vue__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    draggable: __WEBPACK_IMPORTED_MODULE_1_vuedraggable___default.a,
+    RelationshipFormItem: __WEBPACK_IMPORTED_MODULE_2__RelationshipFormItem_vue___default.a
+  },
+
+  mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
+
+  props: ["resourceName", "resourceId", "field"],
+
+  //   created() {
+  //     console.log("this.items: ", this.items);
+  //   },
+
+  data: function data() {
+    return {
+      id: 0,
+      items: [],
+      errorList: new __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["Errors"]()
+    };
+  },
+
+  watch: {
+    errors: function errors(_errors) {
+      var errObj = _errors.errors.hasOwnProperty(this.field.attribute) ? _errors.errors[this.field.attribute][0] : {};
+      Object.keys(errObj).forEach(function (key) {
+        errObj[key.replace(/\./g, "_")] = errObj[key];
+        delete errObj[key];
+      });
+      this.errorList = new __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["Errors"](errObj);
+    }
+  },
+
+  computed: {
+    valueAsArray: function valueAsArray() {
+      return Array.isArray(this.items) ? this.items : [];
+    }
+  },
+
+  methods: {
+    /*
+     * Set the initial, internal value for the field.
+     */
+    setInitialValue: function setInitialValue() {
+      var _this = this;
+
+      this.items = Array.isArray(this.field.value) ? this.field.value : [];
+      this.items = this.items.map(function (item, index) {
+        return {
+          id: _this.getNextId(),
+          modelId: _this.field.models[index],
+          fields: item
+        };
+      });
+
+      if (this.field.singular) {
+        this.items.splice(1);
+      }
+
+      if (this.field.addChildAtStart && this.items.length === 0) {
+        this.items.push({
+          id: this.getNextId(),
+          modelId: 0,
+          fields: _extends({}, this.field.settings)
+        });
+      }
+    },
+
+
+    /**
+     * Fill the given FormData object with the field's internal value.
+     */
+    fill: function fill(formData) {
+      try {
+        this.fillValueFromChildren(formData);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+
+    fillValueFromChildren: function fillValueFromChildren(formData) {
+      var _this2 = this;
+
+      if (!_.isEmpty(this.$refs[0])) {
+        _(this.$refs).each(function (item) {
+          if (item && Array.isArray(item) && item[0]) {
+            item[0].fill(formData, _this2.field.attribute);
+          }
+        });
+      } else {
+        formData.append(this.field.attribute, []);
+      }
+    },
+
+    /**
+     * Update the field's internal value.
+     */
+    handleChange: function handleChange(value) {
+      this.items = Array.isArray(value) ? value : [];
+    },
+    getNextId: function getNextId() {
+      this.id += 1;
+      return this.id;
+    },
+    removeItem: function removeItem(index) {
+      var value = [].concat(_toConsumableArray(this.items));
+      value.splice(index, 1);
+      this.handleChange(value);
+    },
+    addItem: function addItem() {
+      var value = [].concat(_toConsumableArray(this.items));
+      value.push({
+        id: this.getNextId(),
+        modelId: 0,
+        fields: _extends({}, this.field.settings)
+      });
+      this.handleChange(value);
+    }
+  }
+});
+
+/***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33419,7 +33419,7 @@ var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(18)
 /* template */
-var __vue_template__ = __webpack_require__(19)
+var __vue_template__ = __webpack_require__(22)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -33463,7 +33463,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -33664,6 +33664,236 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(20)
+/* template */
+var __vue_template__ = __webpack_require__(21)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/FormCoreRequired.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1f90a6a6", Component.options)
+  } else {
+    hotAPI.reload("data-v-1f90a6a6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
+
+  props: ["resourceName", "resourceId", "field", "orderType"],
+
+  created: function created() {
+    Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
+    Nova.$on(this.orderType + "_product_type_id-change", this.handleProductType);
+  },
+  data: function data() {
+    return {
+      // isDisabled: false,
+      selectedOrderType: "",
+      selectedProductTypeId: 0
+    };
+  },
+
+
+  computed: {
+    isDisabled: function isDisabled() {
+      var disabled = false;
+
+      if (this.orderType === "REBUILD" || this.orderType === "RETURN" || this.orderType === "CHECK_AND_REPORT") {
+        disabled = true;
+      }
+
+      if (this.productTypeId == 5 || this.productTypeId > 6) {
+        disabled = true;
+      }
+
+      this.value = !disabled;
+
+      return disabled;
+    }
+  },
+
+  methods: {
+    handleOrderType: function handleOrderType(data) {
+      console.log(data);
+      this.selectedOrderType = data;
+      // if (
+      //   data === "REBUILD" ||
+      //   data === "RETURN" ||
+      //   data === "CHECK_AND_REPORT"
+      // ) {
+      //   this.isDisabled = true;
+      //   this.value = false;
+      // } else {
+      //   this.isDisabled = false;
+      //   this.value = true;
+      // }
+    },
+    handleProductType: function handleProductType(data) {
+      console.log(data);
+      this.selectedProductTypeId = data;
+    },
+
+    /*
+     * Set the initial, internal value for the field.
+     */
+    setInitialValue: function setInitialValue() {
+      this.value = this.field.value || "";
+    },
+
+
+    /**
+     * Fill the given FormData object with the field's internal value.
+     */
+    fill: function fill(formData) {
+      //   console.log(this.field.attribute, this.value);
+
+      formData.append("core_required", this.value ? 1 : 0 || "");
+    }
+  }
+});
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "default-field",
+    {
+      attrs: {
+        field: _vm.field,
+        errors: _vm.errors,
+        "show-help-text": _vm.showHelpText
+      }
+    },
+    [
+      _c("template", { slot: "field" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.value,
+              expression: "value"
+            }
+          ],
+          staticClass: "checkbox",
+          class: {
+            "bg-gray-300": _vm.isDisabled
+          },
+          attrs: {
+            id: _vm.field.name,
+            type: "checkbox",
+            disabled: _vm.isDisabled,
+            placeholder: _vm.field.name
+          },
+          domProps: {
+            checked: Array.isArray(_vm.value)
+              ? _vm._i(_vm.value, null) > -1
+              : _vm.value
+          },
+          on: {
+            change: function($event) {
+              var $$a = _vm.value,
+                $$el = $event.target,
+                $$c = $$el.checked ? true : false
+              if (Array.isArray($$a)) {
+                var $$v = null,
+                  $$i = _vm._i($$a, $$v)
+                if ($$el.checked) {
+                  $$i < 0 && (_vm.value = $$a.concat([$$v]))
+                } else {
+                  $$i > -1 &&
+                    (_vm.value = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                }
+              } else {
+                _vm.value = $$c
+              }
+            }
+          }
+        })
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1f90a6a6", module.exports)
+  }
+}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -33822,7 +34052,7 @@ if (false) {
 }
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -33938,214 +34168,10 @@ if (false) {
 }
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(27)
-/* template */
-var __vue_template__ = __webpack_require__(28)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/FormCoreRequired.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1f90a6a6", Component.options)
-  } else {
-    hotAPI.reload("data-v-1f90a6a6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
-
-  props: ["resourceName", "resourceId", "field", "orderType"],
-
-  created: function created() {
-    Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
-  },
-  data: function data() {
-    return {
-      isDisabled: false
-    };
-  },
-
-
-  methods: {
-    handleOrderType: function handleOrderType(data) {
-      //   console.log(data);
-      if (data === "REBUILD" || data === "RETURN" || data === "CHECK_AND_REPORT") {
-        this.isDisabled = true;
-        this.value = false;
-      } else {
-        this.isDisabled = false;
-        this.value = true;
-      }
-    },
-
-    /*
-     * Set the initial, internal value for the field.
-     */
-    setInitialValue: function setInitialValue() {
-      this.value = this.field.value || "";
-    },
-
-
-    /**
-     * Fill the given FormData object with the field's internal value.
-     */
-    fill: function fill(formData) {
-      //   console.log(this.field.attribute, this.value);
-
-      formData.append("core_required", this.value ? 1 : 0 || "");
-    }
-  }
-});
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "default-field",
-    {
-      attrs: {
-        field: _vm.field,
-        errors: _vm.errors,
-        "show-help-text": _vm.showHelpText
-      }
-    },
-    [
-      _c("template", { slot: "field" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.value,
-              expression: "value"
-            }
-          ],
-          staticClass: "checkbox",
-          class: {
-            "bg-gray-300": _vm.isDisabled
-          },
-          attrs: {
-            id: _vm.field.name,
-            type: "checkbox",
-            disabled: _vm.isDisabled,
-            placeholder: _vm.field.name
-          },
-          domProps: {
-            checked: Array.isArray(_vm.value)
-              ? _vm._i(_vm.value, null) > -1
-              : _vm.value
-          },
-          on: {
-            change: function($event) {
-              var $$a = _vm.value,
-                $$el = $event.target,
-                $$c = $$el.checked ? true : false
-              if (Array.isArray($$a)) {
-                var $$v = null,
-                  $$i = _vm._i($$a, $$v)
-                if ($$el.checked) {
-                  $$i < 0 && (_vm.value = $$a.concat([$$v]))
-                } else {
-                  $$i > -1 &&
-                    (_vm.value = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-                }
-              } else {
-                _vm.value = $$c
-              }
-            }
-          }
-        })
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1f90a6a6", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);
