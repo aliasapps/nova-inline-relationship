@@ -33760,7 +33760,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     isDisabled: function isDisabled() {
       var disabled = false;
-      console.log("isDisabled: ", this.selectedOrderType);
+      console.log("isDisabled: ", selectedOrderType);
       console.log("isDisabled: ", this.selectedProductTypeId);
       if (this.selectedOrderType === "REBUILD" || this.selectedOrderType === "RETURN" || this.selectedOrderType === "CHECK_AND_REPORT") {
         disabled = true;
