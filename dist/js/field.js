@@ -33760,11 +33760,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     isDisabled: function isDisabled() {
       var disabled = false;
 
-      if (this.orderType === "REBUILD" || this.orderType === "RETURN" || this.orderType === "CHECK_AND_REPORT") {
+      if (this.selectedOrderType === "REBUILD" || this.selectedOrderType === "RETURN" || this.selectedOrderType === "CHECK_AND_REPORT") {
         disabled = true;
       }
 
-      if (this.productTypeId == 5 || this.productTypeId > 6) {
+      if (this.selectedProductTypeId == 5 || this.selectedProductTypeId > 6) {
         disabled = true;
       }
 

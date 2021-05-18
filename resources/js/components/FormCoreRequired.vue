@@ -47,14 +47,14 @@ export default {
       let disabled = false;
 
       if (
-        this.orderType === "REBUILD" ||
-        this.orderType === "RETURN" ||
-        this.orderType === "CHECK_AND_REPORT"
+        this.selectedOrderType === "REBUILD" ||
+        this.selectedOrderType === "RETURN" ||
+        this.selectedOrderType === "CHECK_AND_REPORT"
       ) {
         disabled = true;
       }
 
-      if (this.productTypeId == 5 || this.productTypeId > 6) {
+      if (this.selectedProductTypeId == 5 || this.selectedProductTypeId > 6) {
         disabled = true;
       }
 
