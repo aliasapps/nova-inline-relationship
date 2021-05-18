@@ -44,8 +44,6 @@ export default {
     isDisabled() {
       let disabled = false;
 
-      console.log("field.value: ", this.field.value);
-
       if (
         this.selectedOrderType === "REBUILD" ||
         this.selectedOrderType === "RETURN" ||
