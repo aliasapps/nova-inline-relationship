@@ -33733,8 +33733,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -33759,8 +33757,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     isDisabled: function isDisabled() {
       var disabled = false;
-      console.log("isDisabled: ", this.selectedOrderType);
-      console.log("isDisabled: ", this.selectedProductTypeId);
+      // console.log("isDisabled: ", this.selectedOrderType);
+      // console.log("isDisabled: ", this.selectedProductTypeId);
       if (this.selectedOrderType === "REBUILD" || this.selectedOrderType === "RETURN" || this.selectedOrderType === "CHECK_AND_REPORT") {
         disabled = true;
       }
@@ -33779,17 +33777,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     handleOrderType: function handleOrderType(data) {
       console.log(data);
       this.selectedOrderType = data;
-      // if (
-      //   data === "REBUILD" ||
-      //   data === "RETURN" ||
-      //   data === "CHECK_AND_REPORT"
-      // ) {
-      //   this.isDisabled = true;
-      //   this.value = false;
-      // } else {
-      //   this.isDisabled = false;
-      //   this.value = true;
-      // }
     },
     handleProductType: function handleProductType(data) {
       console.log(data);
@@ -33877,9 +33864,7 @@ var render = function() {
               }
             }
           }
-        }),
-        _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.isDisabled))])
+        })
       ])
     ],
     2
