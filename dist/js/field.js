@@ -33879,7 +33879,7 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.isDisabled))])
+        _c("p", [_vm._v(_vm._s(_vm.isDisabled()))])
       ])
     ],
     2
