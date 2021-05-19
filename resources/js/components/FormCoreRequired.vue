@@ -36,7 +36,7 @@ export default {
     return {
       // isDisabled: false,
       selectedOrderType: "",
-      selectedProductTypeId: 0,
+      selectedProductTypeId: undefined,
     };
   },
 
@@ -52,7 +52,7 @@ export default {
         disabled = true;
       }
 
-      if (this.selectedProductTypeId == 5 || this.selectedProductTypeId > 6) {
+      if (this.selectedProductTypeId && this.selectedProductTypeId == 0) {
         disabled = true;
       }
 
@@ -64,12 +64,17 @@ export default {
 
   methods: {
     handleOrderType(data) {
-      console.log(data);
+      // console.log(data);
       this.selectedOrderType = data;
     },
     handleProductType(data) {
-      console.log(data);
-      this.selectedProductTypeId = data;
+      // console.log(data);
+      const split = data.split("-");
+      // split = [product_type_id, core_required]...
+      // ... essentially an enum that corresponds with...
+      // ... the columns. using the core_required value to...
+      // ... check if core_required for order_product is required.
+      this.selectedProductTypeId = split[1];
     },
     /*
      * Set the initial, internal value for the field.

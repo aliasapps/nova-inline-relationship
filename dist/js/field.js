@@ -33749,7 +33749,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       // isDisabled: false,
       selectedOrderType: "",
-      selectedProductTypeId: 0
+      selectedProductTypeId: undefined
     };
   },
 
@@ -33762,7 +33762,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         disabled = true;
       }
 
-      if (this.selectedProductTypeId == 5 || this.selectedProductTypeId > 6) {
+      if (this.selectedProductTypeId && this.selectedProductTypeId == 0) {
         disabled = true;
       }
 
@@ -33774,12 +33774,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     handleOrderType: function handleOrderType(data) {
-      console.log(data);
+      // console.log(data);
       this.selectedOrderType = data;
     },
     handleProductType: function handleProductType(data) {
-      console.log(data);
-      this.selectedProductTypeId = data;
+      // console.log(data);
+      var split = data.split("-");
+      // split = [product_type_id, core_required]...
+      // ... essentially an enum that corresponds with...
+      // ... the columns. using the core_required value to...
+      // ... check if core_required for order_product is required.
+      this.selectedProductTypeId = split[1];
     },
 
     /*
