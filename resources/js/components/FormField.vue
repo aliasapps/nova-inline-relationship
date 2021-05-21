@@ -30,7 +30,7 @@
         v-if="!field.singular || !items.length"
         class="bg-30 flex p-2 border-b border-40 rounded-lg"
       >
-        <div class="w-full text-right">
+        <div class="w-full text-left">
           <button
             type="button"
             class="btn btn-default bg-transparent hover:bg-primary text-primary hover:text-white border border-primary hover:border-transparent inline-flex items-center relative mr-3"
