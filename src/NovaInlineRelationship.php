@@ -124,9 +124,9 @@ class NovaInlineRelationship extends Field
 
             $properties = $this->getPropertiesWithMetaForForms($resource, $attribute);
 
-            // Log::debug([
-            //     'properties' => $properties
-            // ]);
+            Log::debug([
+                'properties' => $properties
+            ]);
 
             $this->resolveResourceFields($resource, $attribute, $properties);
         }
@@ -500,9 +500,9 @@ class NovaInlineRelationship extends Field
      */
     protected function getPropertiesFromFields(Collection $fields): Collection
     {
-        Log::debug([
-            'fields' => $fields
-        ]);
+        // Log::debug([
+        //     'fields' => $fields
+        // ]);
         return $fields->map(function ($value) {
             // Log::debug([
             //     'value' => $value
