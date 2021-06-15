@@ -553,7 +553,8 @@ class NovaInlineRelationship extends Field
                     Log::debug([
                         // 'properties' => $properties,
                         // 'items' => $items
-                        $value => $key
+                        'value' => $value,
+                        'key' => $key
                     ]);
                     return $properties->has($key)
                         ? $this->setMetaFromClass($properties->get($key), $key, $items->{$key} ?? $value)
