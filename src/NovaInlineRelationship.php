@@ -348,9 +348,9 @@ class NovaInlineRelationship extends Field
     {
         $attrs = ['name' => $attrib, 'attribute' => $attrib];
 
-        Log::debug([
-            'resource setMeta' => $resource
-        ]);
+        // Log::debug([
+        //     'resource setMeta' => $resource
+        // ]);
 
         /** @var Field $class */
         $class = app($item['component'], $attrs);
@@ -545,9 +545,9 @@ class NovaInlineRelationship extends Field
         }
 
         $this->value = $this->value->map(function ($items) use ($properties) {
-            // Log::debug([
-            //     'updateFieldValue' => $items
-            // ]);
+            Log::debug([
+                'updateFieldValue' => $items
+            ]);
             return collect($items)
                 ->map(function ($value, $key) use ($properties, $items) {
                     return $properties->has($key)
