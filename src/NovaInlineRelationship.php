@@ -551,8 +551,9 @@ class NovaInlineRelationship extends Field
             return collect($items)
                 ->map(function ($value, $key) use ($properties, $items) {
                     Log::debug([
-                        'properties' => $properties,
-                        'items' => $items
+                        // 'properties' => $properties,
+                        // 'items' => $items
+                        $value => $key
                     ]);
                     return $properties->has($key)
                         ? $this->setMetaFromClass($properties->get($key), $key, $items->{$key} ?? $value)
