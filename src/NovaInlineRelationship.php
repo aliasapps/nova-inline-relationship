@@ -348,6 +348,10 @@ class NovaInlineRelationship extends Field
     {
         $attrs = ['name' => $attrib, 'attribute' => $attrib];
 
+        Log::debug([
+            'resource setMeta' => $resource
+        ]);
+
         /** @var Field $class */
         $class = app($item['component'], $attrs);
 
