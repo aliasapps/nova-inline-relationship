@@ -27163,6 +27163,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       this.items = Array.isArray(this.field.value) ? this.field.value : [];
       this.items = this.items.map(function (item, index) {
         console.log("formField item: ", item);
+        console.log("this.field: ", _this.field);
         return {
           id: _this.getNextId(),
           modelId: _this.field.models[index],
