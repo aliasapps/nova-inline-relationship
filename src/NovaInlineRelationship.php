@@ -361,6 +361,7 @@ class NovaInlineRelationship extends Field
             ]]);
         }
 
+
         $item['meta'] = $class->jsonSerialize();
         $item['meta']['singularLabel'] = $item['label'] ?? $attrib;
         $item['meta']['placeholder'] = 'Add ' . $item['meta']['singularLabel'];
@@ -369,9 +370,9 @@ class NovaInlineRelationship extends Field
 
         $item['default'] = $item['defaultCallback'] ?? null;
 
-        // Log::debug([
-        //     'post item' => $item
-        // ]);
+        Log::debug([
+            'post item' => $item
+        ]);
 
         return $item;
     }
