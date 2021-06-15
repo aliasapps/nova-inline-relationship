@@ -196,9 +196,9 @@ class NovaInlineRelationship extends Field
                 return ($request->isCreateOrAttachRequest() && $field->showOnCreation)
                     || ($request->isUpdateOrUpdateAttachedRequest() && $field->showOnUpdate);
             });
-        Log::debug([
-            'fields' => $fields
-        ]);
+        // Log::debug([
+        //     'fields' => $fields
+        // ]);
 
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
@@ -296,10 +296,10 @@ class NovaInlineRelationship extends Field
         $this->rules = [$this->getRelationshipRule($attribute, $properties)];
         $modelKey = optional($this->value)->first() ?? $resource->{$attribute}()->getRelated()->newInstance();
 
-        // Log::debug([
-        //     'value 3' => $this->value,
-        //     'properties' => $properties
-        // ]);
+        Log::debug([
+            'value 3' => $this->value,
+            'properties' => $properties
+        ]);
 
         $this->withMeta([
             'defaults' => $this->getDefaultsFromProperties($properties)->all(),
