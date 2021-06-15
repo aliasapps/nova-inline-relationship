@@ -296,10 +296,10 @@ class NovaInlineRelationship extends Field
         $this->rules = [$this->getRelationshipRule($attribute, $properties)];
         $modelKey = optional($this->value)->first() ?? $resource->{$attribute}()->getRelated()->newInstance();
 
-        Log::debug([
-            'value 3' => $this->value,
-            'properties' => $properties
-        ]);
+        // Log::debug([
+        //     'value 3' => $this->value,
+        //     'properties' => $properties
+        // ]);
 
         $this->withMeta([
             'defaults' => $this->getDefaultsFromProperties($properties)->all(),
@@ -545,11 +545,15 @@ class NovaInlineRelationship extends Field
         }
 
         $this->value = $this->value->map(function ($items) use ($properties) {
-            Log::debug([
-                'updateFieldValue' => $items
-            ]);
+            // Log::debug([
+            //     'updateFieldValue' => $items
+            // ]);
             return collect($items)
                 ->map(function ($value, $key) use ($properties, $items) {
+                    Log::debug([
+                        'properties' => $properties,
+                        'items' => $items
+                    ]);
                     return $properties->has($key)
                         ? $this->setMetaFromClass($properties->get($key), $key, $items->{$key} ?? $value)
                         : null;
