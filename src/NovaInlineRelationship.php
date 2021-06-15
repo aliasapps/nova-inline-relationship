@@ -184,9 +184,9 @@ class NovaInlineRelationship extends Field
      */
     public function getPropertiesWithMetaForForms($resource, $attribute): Collection
     {
-        Log::debug([
-            'resource' => $resource
-        ]);
+        // Log::debug([
+        //     'resource' => $resource
+        // ]);
 
         $fields = $this->getFieldsFromResource($resource, $attribute)
             ->filter->authorize(app(NovaRequest::class))
@@ -196,7 +196,9 @@ class NovaInlineRelationship extends Field
                 return ($request->isCreateOrAttachRequest() && $field->showOnCreation)
                     || ($request->isUpdateOrUpdateAttachedRequest() && $field->showOnUpdate);
             });
-
+        Log::debug([
+            'fields' => $fields
+        ]);
 
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
