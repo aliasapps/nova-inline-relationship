@@ -370,9 +370,9 @@ class NovaInlineRelationship extends Field
 
         $item['default'] = $item['defaultCallback'] ?? null;
 
-        Log::debug([
-            'post item' => $item
-        ]);
+        // Log::debug([
+        //     'post item' => $item
+        // ]);
 
         return $item;
     }
@@ -500,9 +500,9 @@ class NovaInlineRelationship extends Field
      */
     protected function getPropertiesFromFields(Collection $fields): Collection
     {
-        // Log::debug([
-        //     'fields' => $fields
-        // ]);
+        Log::debug([
+            'fields' => $fields
+        ]);
         return $fields->map(function ($value) {
             // Log::debug([
             //     'value' => $value
