@@ -33564,6 +33564,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -34032,7 +34033,8 @@ var render = function() {
                     "full-width-content": true,
                     errors: _vm.errors,
                     "resource-id": _vm.modelId,
-                    "resource-name": _vm.modelKey
+                    "resource-name": _vm.modelKey,
+                    value: field.value
                   }
                 })
           ],

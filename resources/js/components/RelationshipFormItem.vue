@@ -85,6 +85,7 @@
         :errors="errors"
         :resource-id="modelId"
         :resource-name="modelKey"
+        :value="field.value"
       >
       </component>
     </div>
