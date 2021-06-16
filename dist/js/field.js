@@ -33756,6 +33756,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created: function created() {
+    console.log(this.field);
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
     Nova.$on(this.orderType + "_product_type_id-change", this.handleProductType);
   },
