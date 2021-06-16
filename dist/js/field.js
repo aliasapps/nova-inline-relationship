@@ -33590,7 +33590,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           parentAttribute: _this.field.attribute + "_" + _this.id,
           helpText: _this.value[attrib].meta.helpText,
           attribute: _this.value[attrib].meta.component === "file-field" ? attrib + "?" + _this.id : _this.field.attribute + "_" + _this.id + "_" + attrib, // This is needed to enable delete link for file without triggering duplicate id warning
-          // name: this.value[attrib].meta.singularLabel,
+          name: _this.value[attrib].meta.singularLabel,
           deletable: _this.modelId > 0, // Hide delete button if model Id is not present, i.e. new model
           attrib: attrib
         });
