@@ -169,7 +169,11 @@ class NovaInlineRelationship extends Field
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
-
+                Log::debug([
+                    'message' => 'getPropertiesWithMetaForDisplay',
+                    'value' => $value,
+                    'key' => $key
+                ]);
                 return $this->setMetaFromClass($value, $key);
             });
     }
@@ -351,6 +355,7 @@ class NovaInlineRelationship extends Field
         Log::debug([
             // 'resource setMeta' => $resource,
             // 'item' => $item, // field
+            'message' => 'setMetaFromClass()',
             'attrib' => $attrib,
             'value' => $value
         ]);
@@ -556,9 +561,9 @@ class NovaInlineRelationship extends Field
                     Log::debug([
                         // 'properties' => $properties,
                         // 'items' => $items,
-                        'key' => $key,
-                        'value' => $value,
-                        'items->{key}' => $items->{$key}
+                        // 'key' => $key,
+                        // 'value' => $value,
+                        // 'items->{key}' => $items->{$key}
                     ]);
                     return $properties->has($key)
                         ? $this->setMetaFromClass($properties->get($key), $key, $items->{$key} ?? $value)
