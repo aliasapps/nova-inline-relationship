@@ -137,7 +137,8 @@ class NovaInlineRelationship extends Field
     {
         parent::resolve($resource, $attribute);
 
-        $request = app(NovaRequest::class);
+        // $request = app(NovaRequest::class);
+        $request = $this->getNovaRequest();
 
         if ($request->isCreateOrAttachRequest() || $request->isUpdateOrUpdateAttachedRequest()) {
             $attribute = $attribute ?? $this->attribute;
@@ -181,7 +182,8 @@ class NovaInlineRelationship extends Field
     public function getPropertiesWithMetaForDisplay($resource, $attribute): Collection
     {
         $fields = $this->getFieldsFromResource($resource, $attribute)
-            ->filter->authorize(app(NovaRequest::class))
+            ->filter->authorize($request)
+            // ->filter->authorize(app(NovaRequest::class))
             ->filter(function ($field) {
                 return $field->showOnDetail;
             });
@@ -697,5 +699,24 @@ class NovaInlineRelationship extends Field
         }
 
         static::$observedModels[$modelClass][$attribute] = $this->isNullValue($value) ? null : $value;
+    }
+
+    /**
+     * Get Nova Request. Should be passed by ->inine().
+     */
+    protected function getNovaRequest()
+    {
+        if ($this->request === null) {
+            $this->request = app(NovaRequest::class);
+        }
+        if (!$this->request instanceof NovaRequest) {
+            $this->request = new NovaRequest($this->request->all());
+        }
+        if (!$this->request->has('viaInlineRelationship')) {
+            $this->request->merge([
+                'viaInlineRelationship' => true
+            ]);
+        }
+        return $this->request;
     }
 }

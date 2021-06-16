@@ -33575,7 +33575,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     FormCoreRequired: __WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue___default.a
   },
 
-  props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
+  props: ["value",
+  // "label",
+  "id", "modelId", "modelKey", "errors", "field"],
 
   computed: {
     fields: function fields() {
@@ -33588,7 +33590,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           parentAttribute: _this.field.attribute + "_" + _this.id,
           helpText: _this.value[attrib].meta.helpText,
           attribute: _this.value[attrib].meta.component === "file-field" ? attrib + "?" + _this.id : _this.field.attribute + "_" + _this.id + "_" + attrib, // This is needed to enable delete link for file without triggering duplicate id warning
-          name: _this.value[attrib].meta.singularLabel,
+          // name: this.value[attrib].meta.singularLabel,
           deletable: _this.modelId > 0, // Hide delete button if model Id is not present, i.e. new model
           attrib: attrib
         });
@@ -33653,6 +33655,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         var parentParts = parentAttrib.split("_");
         var attrib = keyParts.slice(parentParts.length + 1).join("_");
+        if (attrib == "") {
+          attrib = key;
+        }
 
         formData.append(parentAttrib + "[" + _this3.id + "][values][" + attrib + "]", value);
       });

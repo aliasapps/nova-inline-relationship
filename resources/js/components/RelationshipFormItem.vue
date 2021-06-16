@@ -101,7 +101,15 @@ export default {
     FormCoreRequired,
   },
 
-  props: ["value", "label", "id", "modelId", "modelKey", "errors", "field"],
+  props: [
+    "value",
+    // "label",
+    "id",
+    "modelId",
+    "modelKey",
+    "errors",
+    "field",
+  ],
 
   computed: {
     fields() {
@@ -119,7 +127,7 @@ export default {
                 this.value[attrib].meta.component === "file-field"
                   ? attrib + "?" + this.id
                   : this.field.attribute + "_" + this.id + "_" + attrib, // This is needed to enable delete link for file without triggering duplicate id warning
-              name: this.value[attrib].meta.singularLabel,
+              // name: this.value[attrib].meta.singularLabel,
               deletable: this.modelId > 0, // Hide delete button if model Id is not present, i.e. new model
               attrib: attrib,
             },
@@ -192,6 +200,9 @@ export default {
 
         let parentParts = parentAttrib.split("_");
         let attrib = keyParts.slice(parentParts.length + 1).join("_");
+        if (attrib == "") {
+          attrib = key;
+        }
 
         formData.append(
           `${parentAttrib}[${this.id}][values][${attrib}]`,
