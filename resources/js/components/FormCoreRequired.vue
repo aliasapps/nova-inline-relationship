@@ -88,12 +88,12 @@ export default {
       let tempProductTypeId = "";
 
       fields.forEach(function(field) {
-        console.log("fieldAttribute: ", field.fieldAttribute);
+        console.log("fieldAttribute: ", field);
         if (field && field.$children && field.$children.length > 0) {
           const value = field.$children[0].field.value;
           const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
           const join = split.join("_");
-          console.table(value, join);
+          // console.table(value, join);
           if (field.fieldAttribute === "order_type") {
             tempOrderType = value;
           } else if (field.fieldAttribute === "product_type_id") {
