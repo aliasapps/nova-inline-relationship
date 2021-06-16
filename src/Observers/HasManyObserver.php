@@ -14,7 +14,7 @@ class HasManyObserver extends BaseObserver
     public function updating(Model $model, $attribute, $value)
     {
         Log::debug([
-            'modelKey' => $model->primaryKey,
+            'modelKey' => $model->getKeyName(),
             // 'attribute' => $attribute,
             // 'value' => $value
         ]);
