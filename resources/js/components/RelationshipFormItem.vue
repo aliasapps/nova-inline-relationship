@@ -112,11 +112,15 @@ export default {
     "field",
   ],
 
+  mounted() {
+    console.log("this.field: ", this.field);
+  },
+
   computed: {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          console.log("this.field: ", this.field, "attrib: ", attrib);
+          console.log("this.value: ", this.value, "attrib: ", attrib);
           return {
             ...{
               options: {},

@@ -33579,12 +33579,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   // "label",
   "id", "modelId", "modelKey", "errors", "field"],
 
+  mounted: function mounted() {
+    console.log("this.field: ", this.field);
+  },
+
+
   computed: {
     fields: function fields() {
       var _this = this;
 
       return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
-        console.log("this.field: ", _this.field, "attrib: ", attrib);
+        console.log("this.value: ", _this.value, "attrib: ", attrib);
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {
