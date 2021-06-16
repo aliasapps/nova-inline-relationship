@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Relations\Concerns\SupportsDefaultModels;
 use KirschbaumDevelopment\NovaInlineRelationship\Traits\RequireRelationship;
 use KirschbaumDevelopment\NovaInlineRelationship\Observers\NovaInlineRelationshipObserver;
 
-class ModifiedNovaInlineRelationship extends Field
+class NovaInlineRelationship extends Field
 {
     use RequireRelationship;
 
