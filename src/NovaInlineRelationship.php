@@ -520,9 +520,10 @@ class NovaInlineRelationship extends Field
      */
     protected function getPropertiesFromFields(Collection $fields): Collection
     {
-        // Log::debug([
-        //     'fields' => $fields
-        // ]);
+        Log::debug([
+            'message' => 'getPropertiesFromFields',
+            'fields' => $fields
+        ]);
         return $fields->map(function ($value) {
             // Log::debug([
             //     'value' => $value
