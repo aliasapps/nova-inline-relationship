@@ -27124,9 +27124,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
   props: ["resourceName", "resourceId", "field"],
 
-  //   created() {
-  //     console.log("this.items: ", this.items);
-  //   },
+  created: function created() {
+    var el = document.getElementById("order_products_0_product_type_id");
+    console.log(el);
+  },
+
 
   data: function data() {
     return {
