@@ -33589,7 +33589,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
-        console.log("this.value: ", _this.value, "attrib: ", attrib);
+        var idName = _this.field.attribute + "_" + _this.id + "_" + attrib;
+        console.log("this.value: ", _this.value, "attrib: ", attrib, "idName: ", idName);
+
+        document.getElementById(idName).value = _this.value[attrib].value;
+
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {
@@ -33756,7 +33760,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created: function created() {
-    console.log(this.field);
+    // console.log(this.field);
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
     Nova.$on(this.orderType + "_product_type_id-change", this.handleProductType);
   },

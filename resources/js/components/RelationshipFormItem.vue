@@ -120,7 +120,18 @@ export default {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          console.log("this.value: ", this.value, "attrib: ", attrib);
+          const idName = this.field.attribute + "_" + this.id + "_" + attrib;
+          console.log(
+            "this.value: ",
+            this.value,
+            "attrib: ",
+            attrib,
+            "idName: ",
+            idName
+          );
+
+          document.getElementById(idName).value = this.value[attrib].value;
+
           return {
             ...{
               options: {},
