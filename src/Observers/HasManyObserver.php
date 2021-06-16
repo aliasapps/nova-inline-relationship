@@ -20,7 +20,7 @@ class HasManyObserver extends BaseObserver
         ]);
 
         $model->{$attribute}()
-            ->whereNotIn('id', Arr::pluck($value, 'modelId'))
+            ->whereNotIn($model->getKeyName(), Arr::pluck($value, 'modelId'))
             ->get()
             ->each
             ->delete();
