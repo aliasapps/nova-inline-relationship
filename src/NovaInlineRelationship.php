@@ -320,8 +320,7 @@ class NovaInlineRelationship extends Field
             'sortable' => !empty($this->sortUsing),
         ]);
 
-        // $this->updateFieldValue($resource, $attribute, $properties);
-        $this->value = collect([$properties]);
+        $this->updateFieldValue($resource, $attribute, $properties);
     }
 
     /**
@@ -562,14 +561,14 @@ class NovaInlineRelationship extends Field
             // ]);
             return collect($items)
                 ->map(function ($value, $key) use ($properties, $items) {
-                    Log::debug([
-                        'message' => 'updateFieldValue()',
-                        // 'properties' => $properties,
-                        // 'items' => $items,
-                        'key' => $key,
-                        'value' => $value,
-                        // 'items->{key}' => $items->{$key}
-                    ]);
+                    // Log::debug([
+                    //     'message' => 'updateFieldValue()',
+                    //     // 'properties' => $properties,
+                    //     // 'items' => $items,
+                    //     'key' => $key,
+                    //     'value' => $value,
+                    //     // 'items->{key}' => $items->{$key}
+                    // ]);
                     return $properties->has($key)
                         ? $this->setMetaFromClass($properties->get($key), $key, $items->{$key} ?? $value)
                         : null;
