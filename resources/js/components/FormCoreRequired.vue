@@ -94,13 +94,15 @@ export default {
         // console.log("fieldAttribute: ", field.fieldAttribute);
         if (field && field.$children && field.$children.length > 0) {
           const value = field.$children[0].field.value;
-          const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
-          const join = split.join("_");
-          console.table(value, join);
-          if (join === "order_type") {
-            tempOrderType = value;
-          } else if (join === "product_type_id") {
-            tempProductTypeId = value.split("-")[1];
+          if (field.fieldAttribute) {
+            const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
+            const join = split.join("_");
+            if (join === "order_type") {
+              tempOrderType = value;
+            } else if (join === "product_type_id") {
+              // console.table(value, join);
+              tempProductTypeId = value.split("-")[1];
+            }
           }
         }
       });
