@@ -89,8 +89,9 @@ export default {
         console.log("fieldAttribute: ", field.fieldAttribute);
         if (field && field.$children && field.$children.length > 0) {
           const value = field.$children[0].field.value;
-          const split = field.fieldAttribute.split("_").slice(2);
-          console.log(split);
+          const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
+          const join = split.join("_");
+          console.log(join);
           // console.log(`${split[]}` === "order_type");
           // if (field.fieldAttribute === "order_type") {
           //   tempOrderType = value;
