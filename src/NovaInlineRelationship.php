@@ -365,9 +365,9 @@ class NovaInlineRelationship extends Field
         /** @var Field $class */
         $class = app($item['component'], $attrs);
 
-        Log::debug([
-            'class' => $class
-        ]);
+        // Log::debug([
+        //     'class' => $class
+        // ]);
 
         if (isset($value) && is_callable($class->resolveCallback)) {
             $value = call_user_func($class->resolveCallback, $value, $resource, $attrib);
@@ -392,6 +392,13 @@ class NovaInlineRelationship extends Field
         $item['meta']['helpText'] = $item['helpText'] ?? null;
         // $item['meta']['value'] = $item['defaultCallback'] ?? null;
         $item['meta']['value'] = $item['defaultCallback'] ?? $value;
+        if ($attrib === 'product_type_id') {
+            Log::debug([
+                'message' => 'setMetaFromClass() IF',
+                'item' => $item
+            ]);
+            // $item['meta']['value'] = $value;
+        }
 
         $item['meta']['savedValue'] = $value ?? null;
         $item['value'] = $value ?? null;
@@ -533,10 +540,10 @@ class NovaInlineRelationship extends Field
         //     'fields' => $fields
         // ]);
         return $fields->map(function ($value) {
-            Log::debug([
-                'message' => 'getPropertiesFromFields',
-                'value' => $value
-            ]);
+            // Log::debug([
+            //     'message' => 'getPropertiesFromFields',
+            //     'value' => $value
+            // ]);
             return [
                 'component' => get_class($value),
                 'label' => $value->name,
