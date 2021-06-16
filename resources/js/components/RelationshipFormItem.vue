@@ -65,7 +65,7 @@
       >
       </form-core-required>
 
-      <component
+      <!-- <component
         v-else-if="attrib === 'order_type'"
         :is="'form-' + field.component"
         :ref="attrib"
@@ -75,7 +75,7 @@
         :resource-id="modelId"
         :resource-name="modelKey"
       >
-      </component>
+      </component> -->
       <component
         v-else
         :is="'form-' + field.component"

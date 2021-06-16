@@ -34021,19 +34021,6 @@ var render = function() {
                     orderType: field.parentAttribute
                   }
                 })
-              : attrib === "order_type"
-              ? _c("form-" + field.component, {
-                  ref: attrib,
-                  refInFor: true,
-                  tag: "component",
-                  attrs: {
-                    field: field,
-                    "full-width-content": true,
-                    errors: _vm.errors,
-                    "resource-id": _vm.modelId,
-                    "resource-name": _vm.modelKey
-                  }
-                })
               : _c("form-" + field.component, {
                   ref: attrib,
                   refInFor: true,
