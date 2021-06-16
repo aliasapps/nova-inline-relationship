@@ -33751,7 +33751,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   created: function created() {
     // console.log(this.field);
-    console.log(this);
+    // console.log(this);
     this.handleOnFormUpdate(this.$parent.$children);
 
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
@@ -33805,15 +33805,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       fields.forEach(function (field) {
         console.log("fieldAttribute: ", field.fieldAttribute);
-        // if (field && field.$children && field.$children.length > 0) {
-        //   const value = field.$children[0].field.value;
-        //   // console.log(field.fieldAttribute === "order_type");
-        //   if (field.fieldAttribute === "order_type") {
-        //     tempOrderType = value;
-        //   } else if (field.fieldAttribute === "product_type") {
-        //     tempProductTypeId = value;
-        //   }
-        // }
+        if (field && field.$children && field.$children.length > 0) {
+          var value = field.$children[0].field.value;
+          var split = field.fieldAttribute.split("_");
+          console.log(split);
+          console.log(field.fieldAttribute === "order_type");
+          // if (field.fieldAttribute === "order_type") {
+          //   tempOrderType = value;
+          // } else if (field.fieldAttribute === "product_type") {
+          //   tempProductTypeId = value;
+          // }
+        }
       });
 
       this.selectedOrderType = tempOrderType;
