@@ -60,11 +60,6 @@ export default {
 
   props: ["resourceName", "resourceId", "field"],
 
-  created() {
-    const el = document.getElementById("order_products_0_product_type_id");
-    console.log(el);
-  },
-
   data: function() {
     return {
       id: 0,

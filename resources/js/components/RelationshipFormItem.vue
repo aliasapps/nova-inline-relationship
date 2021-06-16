@@ -112,26 +112,14 @@ export default {
     "field",
   ],
 
-  mounted() {
-    console.log("this.field: ", this.field);
-  },
+  // mounted() {
+  //   console.log("this.field: ", this.field);
+  // },
 
   computed: {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
-          const idName = this.field.attribute + "_" + this.id + "_" + attrib;
-          console.log(
-            "this.value: ",
-            this.value,
-            "attrib: ",
-            attrib,
-            "idName: ",
-            idName
-          );
-          const fieldElement = document.getElementById(idName);
-          if (fieldElement) fieldElement.value = this.value[attrib].value;
-
           return {
             ...{
               options: {},
