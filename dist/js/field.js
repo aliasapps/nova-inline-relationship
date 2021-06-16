@@ -27124,12 +27124,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
   props: ["resourceName", "resourceId", "field"],
 
-  created: function created() {
-    var el = document.getElementById("order_products_0_product_type_id");
-    console.log(el);
-  },
-
-
   data: function data() {
     return {
       id: 0,
@@ -33581,21 +33575,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   // "label",
   "id", "modelId", "modelKey", "errors", "field"],
 
-  mounted: function mounted() {
-    console.log("this.field: ", this.field);
-  },
-
+  // mounted() {
+  //   console.log("this.field: ", this.field);
+  // },
 
   computed: {
     fields: function fields() {
       var _this = this;
 
       return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
-        var idName = _this.field.attribute + "_" + _this.id + "_" + attrib;
-        console.log("this.value: ", _this.value, "attrib: ", attrib, "idName: ", idName);
-        var fieldElement = document.getElementById(idName);
-        if (fieldElement) fieldElement.value = _this.value[attrib].value;
-
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {
@@ -33763,6 +33751,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   created: function created() {
     // console.log(this.field);
+    console.log(this);
+    this.handleOnFormUpdate(this.$parent.$children);
+
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
     Nova.$on(this.orderType + "_product_type_id-change", this.handleProductType);
   },
@@ -33806,6 +33797,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // ... the columns. using the core_required value to...
       // ... check if core_required for order_product is required.
       this.selectedProductTypeId = split[1];
+    },
+    handleOnFormUpdate: function handleOnFormUpdate(fields) {
+      // console.log(fields);
+      var tempOrderType = "";
+      var tempProductTypeId = "";
+
+      fields.forEach(function (field) {
+        // console.log("fieldAttribute: ", field.fieldAttribute);
+        if (field && field.$children && field.$children.length > 0) {
+          var value = field.$children[0].field.value;
+          // console.log(field.fieldAttribute === "order_type");
+          if (field.fieldAttribute === "order_type") {
+            tempOrderType = value;
+          } else if (field.fieldAttribute === "product_type") {
+            tempProductTypeId = value;
+          }
+        }
+      });
+
+      this.selectedOrderType = tempOrderType;
+      this.selectedProductTypeId = tempProductTypeId;
     },
 
     /*
@@ -33860,7 +33872,6 @@ var render = function() {
             "bg-gray-300": _vm.isDisabled
           },
           attrs: {
-            id: _vm.field.name,
             type: "checkbox",
             disabled: _vm.isDisabled,
             placeholder: _vm.field.name
