@@ -33752,7 +33752,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   created: function created() {
     // console.log(this.field);
     console.log(this);
-    this.handleOnFormUpdate(this.$parent.$children.$children);
+    this.handleOnFormUpdate(this.$parent.$children);
 
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
     Nova.$on(this.orderType + "_product_type_id-change", this.handleProductType);

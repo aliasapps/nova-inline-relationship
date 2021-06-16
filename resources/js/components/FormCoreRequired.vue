@@ -27,7 +27,7 @@ export default {
   created() {
     // console.log(this.field);
     console.log(this);
-    this.handleOnFormUpdate(this.$parent.$children.$children);
+    this.handleOnFormUpdate(this.$parent.$children);
 
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
     Nova.$on(
