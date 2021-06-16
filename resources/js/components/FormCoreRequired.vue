@@ -25,10 +25,6 @@ export default {
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created() {
-    // console.log(this.field);
-    // console.log(this);
-    // console.log(this.$parent.$children.length);
-
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
     Nova.$on(
       `${this.orderType}_product_type_id-change`,
@@ -50,8 +46,6 @@ export default {
 
   computed: {
     isDisabled() {
-      console.log(this.selectedOrderType, this.selectedProductTypeId);
-
       let disabled = false;
 
       if (

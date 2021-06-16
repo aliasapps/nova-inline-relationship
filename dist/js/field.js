@@ -33750,10 +33750,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ["resourceName", "resourceId", "field", "orderType"],
 
   created: function created() {
-    // console.log(this.field);
-    // console.log(this);
-    // console.log(this.$parent.$children.length);
-
     Nova.$on(this.orderType + "_order_type-change", this.handleOrderType);
     Nova.$on(this.orderType + "_product_type_id-change", this.handleProductType);
   },
@@ -33771,8 +33767,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   computed: {
     isDisabled: function isDisabled() {
-      console.log(this.selectedOrderType, this.selectedProductTypeId);
-
       var disabled = false;
 
       if (this.selectedOrderType === "REBUILD" || this.selectedOrderType === "RETURN" || this.selectedOrderType === "CHECK_AND_REPORT") {
