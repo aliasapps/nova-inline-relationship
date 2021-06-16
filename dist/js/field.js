@@ -33591,8 +33591,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
         var idName = _this.field.attribute + "_" + _this.id + "_" + attrib;
         console.log("this.value: ", _this.value, "attrib: ", attrib, "idName: ", idName);
-
-        document.getElementById(idName).value = _this.value[attrib].value;
+        var fieldElement = document.getElementById(idName);
+        if (fieldElement) fieldElement.value = _this.value[attrib].value;
 
         return _extends({
           options: {}

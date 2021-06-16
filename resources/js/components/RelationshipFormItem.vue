@@ -129,8 +129,8 @@ export default {
             "idName: ",
             idName
           );
-
-          document.getElementById(idName).value = this.value[attrib].value;
+          const fieldElement = document.getElementById(idName);
+          if (fieldElement) fieldElement.value = this.value[attrib].value;
 
           return {
             ...{
