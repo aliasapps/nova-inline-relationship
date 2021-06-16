@@ -84,8 +84,12 @@ export default {
       this.selectedProductTypeId = split[1];
     },
     handleOnFormUpdate(fields) {
-      console.log(fields, fields.length);
-      console.log(this.$parent.$children[4]);
+      // console.log(fields, fields.length);
+      const parent = this.$parent;
+      const children = parent.$children;
+
+      console.log({ parent, children });
+
       let tempOrderType = "";
       let tempProductTypeId = "";
 

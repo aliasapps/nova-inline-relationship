@@ -33802,8 +33802,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.selectedProductTypeId = split[1];
     },
     handleOnFormUpdate: function handleOnFormUpdate(fields) {
-      console.log(fields, fields.length);
-      console.log(this.$parent.$children[4]);
+      // console.log(fields, fields.length);
+      var parent = this.$parent;
+      var children = parent.$children;
+
+      console.log({ parent: parent, children: children });
+
       var tempOrderType = "";
       var tempProductTypeId = "";
 
