@@ -83,7 +83,7 @@ export default {
       this.selectedProductTypeId = split[1];
     },
     handleOnFormUpdate(fields) {
-      // console.log(fields);
+      console.log(fields);
       let tempOrderType = "";
       let tempProductTypeId = "";
 

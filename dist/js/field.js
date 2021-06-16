@@ -33801,7 +33801,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.selectedProductTypeId = split[1];
     },
     handleOnFormUpdate: function handleOnFormUpdate(fields) {
-      // console.log(fields);
+      console.log(fields);
       var tempOrderType = "";
       var tempProductTypeId = "";
 
