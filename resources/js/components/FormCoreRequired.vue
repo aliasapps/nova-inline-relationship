@@ -92,11 +92,11 @@ export default {
           const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
           const join = split.join("_");
           console.log(join, value);
-          // if (field.fieldAttribute === "order_type") {
-          //   tempOrderType = value;
-          // } else if (field.fieldAttribute === "product_type") {
-          //   tempProductTypeId = value;
-          // }
+          if (field.fieldAttribute === "order_type") {
+            tempOrderType = value;
+          } else if (field.fieldAttribute === "product_type_id") {
+            tempProductTypeId = value.split("-")[0];
+          }
         }
       });
 
