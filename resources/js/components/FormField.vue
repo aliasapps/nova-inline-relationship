@@ -98,8 +98,7 @@ export default {
     setInitialValue() {
       this.items = Array.isArray(this.field.value) ? this.field.value : [];
       this.items = this.items.map((item, index) => {
-        console.log("formField item: ", item);
-        console.log("this.field: ", this.field);
+        // console.log("formField item: ", item);
         return {
           id: this.getNextId(),
           modelId: this.field.models[index],

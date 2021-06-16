@@ -115,6 +115,7 @@ export default {
     fields() {
       return _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
+          console.log("this.field: ", this.field, "attrib: ", attrib);
           return {
             ...{
               options: {},

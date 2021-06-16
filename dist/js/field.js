@@ -27162,8 +27162,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
       this.items = Array.isArray(this.field.value) ? this.field.value : [];
       this.items = this.items.map(function (item, index) {
-        console.log("formField item: ", item);
-        console.log("this.field: ", _this.field);
+        // console.log("formField item: ", item);
         return {
           id: _this.getNextId(),
           modelId: _this.field.models[index],
@@ -33584,6 +33583,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
+        console.log("this.field: ", _this.field, "attrib: ", attrib);
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {
