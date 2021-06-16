@@ -4,6 +4,7 @@ namespace KirschbaumDevelopment\NovaInlineRelationship\Observers;
 
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class HasManyObserver extends BaseObserver
 {
