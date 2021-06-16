@@ -348,9 +348,12 @@ class NovaInlineRelationship extends Field
     {
         $attrs = ['name' => $attrib, 'attribute' => $attrib];
 
-        // Log::debug([
-        //     'resource setMeta' => $resource
-        // ]);
+        Log::debug([
+            // 'resource setMeta' => $resource,
+            'item' => $item,
+            'attrib' => $attrib,
+            'value' => $value
+        ]);
 
         /** @var Field $class */
         $class = app($item['component'], $attrs);
@@ -553,8 +556,8 @@ class NovaInlineRelationship extends Field
                     Log::debug([
                         // 'properties' => $properties,
                         // 'items' => $items
+                        'key' => $key,
                         'value' => $value,
-                        'key' => $key
                     ]);
                     return $properties->has($key)
                         ? $this->setMetaFromClass($properties->get($key), $key, $items->{$key} ?? $value)
@@ -563,11 +566,9 @@ class NovaInlineRelationship extends Field
                 ->filter();
         });
 
-        Log::debug([
-            'this->value' => $this->value
-        ]);
-
-        // Log::debug($this->value);
+        // Log::debug([
+        //     'this->value' => $this->value
+        // ]);
     }
 
     /**
