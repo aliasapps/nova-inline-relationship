@@ -89,9 +89,9 @@ export default {
         console.log("fieldAttribute: ", field.fieldAttribute);
         if (field && field.$children && field.$children.length > 0) {
           const value = field.$children[0].field.value;
-          const split = field.fieldAttribute.split("_");
+          const split = field.fieldAttribute.split("_").slice(2);
           console.log(split);
-          console.log(field.fieldAttribute === "order_type");
+          // console.log(`${split[]}` === "order_type");
           // if (field.fieldAttribute === "order_type") {
           //   tempOrderType = value;
           // } else if (field.fieldAttribute === "product_type") {
