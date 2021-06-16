@@ -1,8 +1,8 @@
 <template>
   <default-field :field="field" :errors="errors" :show-help-text="showHelpText">
     <template slot="field">
+      <!-- :id="field.name" -->
       <input
-        :id="field.name"
         type="checkbox"
         class="checkbox"
         :disabled="isDisabled"
@@ -26,6 +26,9 @@ export default {
 
   created() {
     // console.log(this.field);
+    console.log(this.$parent);
+    this.handleOnFormUpdate(this.$parent.$children);
+
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
     Nova.$on(
       `${this.orderType}_product_type_id-change`,
@@ -76,6 +79,27 @@ export default {
       // ... the columns. using the core_required value to...
       // ... check if core_required for order_product is required.
       this.selectedProductTypeId = split[1];
+    },
+    handleOnFormUpdate(fields) {
+      // console.log(fields);
+      let tempOrderType = "";
+      let tempProductTypeId = "";
+
+      fields.forEach(function(field) {
+        console.log("fieldAttribute: ", field.fieldAttribute);
+        if (field && field.$children && field.$children.length > 0) {
+          const value = field.$children[0].field.value;
+          // console.log(field.fieldAttribute === "order_type");
+          if (field.fieldAttribute === "order_type") {
+            tempOrderType = value;
+          } else if (field.fieldAttribute === "product_type") {
+            tempProductTypeId = value;
+          }
+        }
+      });
+
+      this.orderType = tempOrderType;
+      this.productTypeCoreRequired = tempProductTypeId;
     },
     /*
      * Set the initial, internal value for the field.
