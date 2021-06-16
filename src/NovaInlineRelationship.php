@@ -321,7 +321,7 @@ class NovaInlineRelationship extends Field
         ]);
 
         // $this->updateFieldValue($resource, $attribute, $properties);
-        $this->value = collect($properties);
+        $this->value = collect([$properties]);
     }
 
     /**
