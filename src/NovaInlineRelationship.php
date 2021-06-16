@@ -388,6 +388,7 @@ class NovaInlineRelationship extends Field
         $item['meta']['helpText'] = $item['helpText'] ?? null;
         $item['meta']['value'] = $item['defaultCallback'] ?? null;
         $item['meta']['savedValue'] = $value ?? null;
+        $item['value'] = $value ?? null;
 
         $item['default'] = $item['defaultCallback'] ?? null;
 
@@ -538,7 +539,7 @@ class NovaInlineRelationship extends Field
                 'attribute' => $value->attribute,
                 'defaultCallback' => $value->defaultCallback,
                 'helpText' => $value->helpText,
-                'helpWidth' => $value->helpWidth
+                'helpWidth' => $value->helpWidth,
             ];
         });
     }
