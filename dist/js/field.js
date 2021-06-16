@@ -33801,7 +33801,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.selectedProductTypeId = split[1];
     },
     handleOnFormUpdate: function handleOnFormUpdate(fields) {
-      console.log(fields);
+      // console.log(fields);
       var tempOrderType = "";
       var tempProductTypeId = "";
 
@@ -33811,7 +33811,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           var value = field.$children[0].field.value;
           var split = field.fieldAttribute.split("_").slice(3); // to remove parent model
           var join = split.join("_");
-          console.log(join, value);
+          console.table(value, join);
           if (field.fieldAttribute === "order_type") {
             tempOrderType = value;
           } else if (field.fieldAttribute === "product_type_id") {

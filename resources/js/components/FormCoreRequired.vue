@@ -83,7 +83,7 @@ export default {
       this.selectedProductTypeId = split[1];
     },
     handleOnFormUpdate(fields) {
-      console.log(fields);
+      // console.log(fields);
       let tempOrderType = "";
       let tempProductTypeId = "";
 
@@ -93,7 +93,7 @@ export default {
           const value = field.$children[0].field.value;
           const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
           const join = split.join("_");
-          console.log(join, value);
+          console.table(value, join);
           if (field.fieldAttribute === "order_type") {
             tempOrderType = value;
           } else if (field.fieldAttribute === "product_type_id") {
