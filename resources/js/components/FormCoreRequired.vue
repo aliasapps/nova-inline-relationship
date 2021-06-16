@@ -85,18 +85,18 @@ export default {
       let tempOrderType = "";
       let tempProductTypeId = "";
 
-      // fields.forEach(function(field) {
-      //   // console.log("fieldAttribute: ", field.fieldAttribute);
-      //   if (field && field.$children && field.$children.length > 0) {
-      //     const value = field.$children[0].field.value;
-      //     // console.log(field.fieldAttribute === "order_type");
-      //     if (field.fieldAttribute === "order_type") {
-      //       tempOrderType = value;
-      //     } else if (field.fieldAttribute === "product_type") {
-      //       tempProductTypeId = value;
-      //     }
-      //   }
-      // });
+      fields.forEach(function(field) {
+        console.log("fieldAttribute: ", field.fieldAttribute);
+        // if (field && field.$children && field.$children.length > 0) {
+        //   const value = field.$children[0].field.value;
+        //   // console.log(field.fieldAttribute === "order_type");
+        //   if (field.fieldAttribute === "order_type") {
+        //     tempOrderType = value;
+        //   } else if (field.fieldAttribute === "product_type") {
+        //     tempProductTypeId = value;
+        //   }
+        // }
+      });
 
       this.selectedOrderType = tempOrderType;
       this.selectedProductTypeId = tempProductTypeId;
