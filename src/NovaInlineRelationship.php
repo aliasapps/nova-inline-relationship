@@ -387,6 +387,7 @@ class NovaInlineRelationship extends Field
         $item['meta']['placeholder'] = 'Add ' . $item['meta']['singularLabel'];
         $item['meta']['helpText'] = $item['helpText'] ?? null;
         $item['meta']['value'] = $item['defaultCallback'] ?? null;
+        $item['meta']['savedValue'] = $value ?? null;
 
         $item['default'] = $item['defaultCallback'] ?? null;
 
@@ -520,10 +521,10 @@ class NovaInlineRelationship extends Field
      */
     protected function getPropertiesFromFields(Collection $fields): Collection
     {
-        Log::debug([
-            'message' => 'getPropertiesFromFields',
-            'fields' => $fields
-        ]);
+        // Log::debug([
+        //     'message' => 'getPropertiesFromFields',
+        //     'fields' => $fields
+        // ]);
         return $fields->map(function ($value) {
             // Log::debug([
             //     'value' => $value
