@@ -98,8 +98,8 @@ export default {
         }
       });
 
-      this.orderType = tempOrderType;
-      this.productTypeCoreRequired = tempProductTypeId;
+      this.selectedOrderType = tempOrderType;
+      this.selectedProductTypeId = tempProductTypeId;
     },
     /*
      * Set the initial, internal value for the field.
