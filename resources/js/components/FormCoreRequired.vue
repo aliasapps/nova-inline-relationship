@@ -46,6 +46,8 @@ export default {
 
   computed: {
     isDisabled() {
+      console.log(this.selectedOrderType, this.selectedProductTypeId);
+
       let disabled = false;
 
       if (
@@ -99,6 +101,8 @@ export default {
           }
         }
       });
+
+      console.log({ tempOrderType, tempProductTypeId });
 
       this.selectedOrderType = tempOrderType;
       this.selectedProductTypeId = tempProductTypeId;

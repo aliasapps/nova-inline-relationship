@@ -33768,6 +33768,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   computed: {
     isDisabled: function isDisabled() {
+      console.log(this.selectedOrderType, this.selectedProductTypeId);
+
       var disabled = false;
 
       if (this.selectedOrderType === "REBUILD" || this.selectedOrderType === "RETURN" || this.selectedOrderType === "CHECK_AND_REPORT") {
@@ -33817,6 +33819,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           }
         }
       });
+
+      console.log({ tempOrderType: tempOrderType, tempProductTypeId: tempProductTypeId });
 
       this.selectedOrderType = tempOrderType;
       this.selectedProductTypeId = tempProductTypeId;
