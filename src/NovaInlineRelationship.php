@@ -393,20 +393,21 @@ class NovaInlineRelationship extends Field
         // $item['meta']['value'] = $item['defaultCallback'] ?? null;
         $item['meta']['value'] = $item['defaultCallback'] ?? $value;
         if ($attrib === 'product_type_id') {
+            Log::debug($item['options']);
             foreach ($item['options'] as $option) {
-                Log::debug([
-                    '$optin' => $option
-                ]);
+                // Log::debug([
+                //     '$optin' => $option
+                // ]);
                 // $product_type_id = (explode('-', $option['value']))[0];
                 // if ($value == $product_type_id) {
 
                 //     $item['meta']['value'] = $option['value'];
                 // }
             }
-            Log::debug([
-                'message' => 'setMetaFromClass() IF',
-                'item' => $item['options']
-            ]);
+            // Log::debug([
+            //     'message' => 'setMetaFromClass() IF',
+            //     'item' => $item['options']
+            // ]);
             // $item['meta']['value'] = $value;
         }
 
