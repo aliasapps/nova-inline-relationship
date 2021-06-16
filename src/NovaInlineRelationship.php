@@ -408,7 +408,7 @@ class NovaInlineRelationship extends Field
             }
         }
 
-        unset($item['field']);
+        // unset($item['field']);
         // We are using Singular Label instead of name to display labels as compound name will be used in Vue
         $item['meta']['singularLabel'] = Str::title(Str::singular(str_replace('_', ' ', $item['label'] ?? $attrib)));
 
