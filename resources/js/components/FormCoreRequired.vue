@@ -83,26 +83,26 @@ export default {
       this.selectedProductTypeId = split[1];
     },
     handleOnFormUpdate(fields) {
-      console.log(fields);
+      console.log(fields, fields.length);
       let tempOrderType = "";
       let tempProductTypeId = "";
 
-      fields.forEach(function(field) {
-        console.log("fieldAttribute: ", field);
-        if (field && field.$children && field.$children.length > 0) {
-          const value = field.$children[0].field.value;
-          const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
-          const join = split.join("_");
-          // console.table(value, join);
-          if (field.fieldAttribute === "order_type") {
-            tempOrderType = value;
-          } else if (field.fieldAttribute === "product_type_id") {
-            tempProductTypeId = value.split("-")[0];
-          }
-        }
-      });
+      // fields.forEach(function(field) {
+      //   console.log("fieldAttribute: ", field);
+      //   if (field && field.$children && field.$children.length > 0) {
+      //     const value = field.$children[0].field.value;
+      //     const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
+      //     const join = split.join("_");
+      //     // console.table(value, join);
+      //     if (field.fieldAttribute === "order_type") {
+      //       tempOrderType = value;
+      //     } else if (field.fieldAttribute === "product_type_id") {
+      //       tempProductTypeId = value.split("-")[0];
+      //     }
+      //   }
+      // });
 
-      console.log({ tempOrderType, tempProductTypeId });
+      // console.log({ tempOrderType, tempProductTypeId });
 
       this.selectedOrderType = tempOrderType;
       this.selectedProductTypeId = tempProductTypeId;
