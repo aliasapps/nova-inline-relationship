@@ -33808,7 +33808,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var tempProductTypeId = "";
 
       fields.forEach(function (field) {
-        console.log("fieldAttribute: ", field.fieldAttribute);
+        // console.log("fieldAttribute: ", field.fieldAttribute);
         if (field && field.$children && field.$children.length > 0) {
           var value = field.$children[0].field.value;
           var split = field.fieldAttribute.split("_").slice(3); // to remove parent model
@@ -33817,12 +33817,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           if (join === "order_type") {
             tempOrderType = value;
           } else if (join === "product_type_id") {
-            tempProductTypeId = value.split("-")[0];
+            tempProductTypeId = value.split("-")[1];
           }
         }
       });
 
-      console.log({ tempOrderType: tempOrderType, tempProductTypeId: tempProductTypeId });
+      // console.log({ tempOrderType, tempProductTypeId });
 
       this.selectedOrderType = tempOrderType;
       this.selectedProductTypeId = tempProductTypeId;

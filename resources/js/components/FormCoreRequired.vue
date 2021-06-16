@@ -91,7 +91,7 @@ export default {
       let tempProductTypeId = "";
 
       fields.forEach(function(field) {
-        console.log("fieldAttribute: ", field.fieldAttribute);
+        // console.log("fieldAttribute: ", field.fieldAttribute);
         if (field && field.$children && field.$children.length > 0) {
           const value = field.$children[0].field.value;
           const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
@@ -100,12 +100,12 @@ export default {
           if (join === "order_type") {
             tempOrderType = value;
           } else if (join === "product_type_id") {
-            tempProductTypeId = value.split("-")[0];
+            tempProductTypeId = value.split("-")[1];
           }
         }
       });
 
-      console.log({ tempOrderType, tempProductTypeId });
+      // console.log({ tempOrderType, tempProductTypeId });
 
       this.selectedOrderType = tempOrderType;
       this.selectedProductTypeId = tempProductTypeId;
