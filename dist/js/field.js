@@ -33811,7 +33811,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // console.log("fieldAttribute: ", field.fieldAttribute);
         if (field && field.$children && field.$children.length > 0) {
           var value = field.$children[0].field.value;
-          if (field.fieldAttribute) {
+          if (field.fieldAttribute !== null) {
             var split = field.fieldAttribute.split("_").slice(3); // to remove parent model
             var join = split.join("_");
             if (join === "order_type") {
