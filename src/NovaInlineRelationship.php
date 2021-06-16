@@ -207,11 +207,11 @@ class NovaInlineRelationship extends Field
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
-                Log::debug([
-                    'message' => 'getPropertiesFromFields',
-                    'value' => $value,
-                    'key' => $key
-                ]);
+                // Log::debug([
+                //     'message' => 'getPropertiesFromFields',
+                //     'value' => $value,
+                //     'key' => $key
+                // ]);
                 return $this->setMetaFromClass($value, $key);
             });
     }
@@ -320,7 +320,8 @@ class NovaInlineRelationship extends Field
             'sortable' => !empty($this->sortUsing),
         ]);
 
-        $this->updateFieldValue($resource, $attribute, $properties);
+        // $this->updateFieldValue($resource, $attribute, $properties);
+        $this->value = collect($properties);
     }
 
     /**
@@ -354,13 +355,13 @@ class NovaInlineRelationship extends Field
     {
         $attrs = ['name' => $attrib, 'attribute' => $attrib];
 
-        Log::debug([
-            // 'resource setMeta' => $resource,
-            // 'item' => $item, // field
-            'message' => 'setMetaFromClass()',
-            'attrib' => $attrib,
-            'value' => $value
-        ]);
+        // Log::debug([
+        //     // 'resource setMeta' => $resource,
+        //     // 'item' => $item, // field
+        //     'message' => 'setMetaFromClass()',
+        //     'attrib' => $attrib,
+        //     'value' => $value
+        // ]);
 
         /** @var Field $class */
         $class = app($item['component'], $attrs);
@@ -520,10 +521,10 @@ class NovaInlineRelationship extends Field
      */
     protected function getPropertiesFromFields(Collection $fields): Collection
     {
-        Log::debug([
-            'message' => 'getPropertiesFromFields',
-            'fields' => $fields
-        ]);
+        // Log::debug([
+        //     'message' => 'getPropertiesFromFields',
+        //     'fields' => $fields
+        // ]);
         return $fields->map(function ($value) {
             // Log::debug([
             //     'value' => $value
