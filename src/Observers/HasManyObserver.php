@@ -13,11 +13,11 @@ class HasManyObserver extends BaseObserver
      */
     public function updating(Model $model, $attribute, $value)
     {
-        Log::debug([
-            'modelKey' => $model->getKeyName(),
-            // 'attribute' => $attribute,
-            // 'value' => $value
-        ]);
+        // Log::debug([
+        //     'modelKey' => $model->getKeyName(),
+        //     // 'attribute' => $attribute,
+        //     // 'value' => $value
+        // ]);
 
         $model->{$attribute}()
             ->whereNotIn($model->getKeyName(), Arr::pluck($value, 'modelId'))
