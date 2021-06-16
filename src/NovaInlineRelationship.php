@@ -350,7 +350,7 @@ class NovaInlineRelationship extends Field
 
         Log::debug([
             // 'resource setMeta' => $resource,
-            'item' => $item,
+            // 'item' => $item, // field
             'attrib' => $attrib,
             'value' => $value
         ]);
@@ -555,7 +555,7 @@ class NovaInlineRelationship extends Field
                 ->map(function ($value, $key) use ($properties, $items) {
                     Log::debug([
                         // 'properties' => $properties,
-                        // 'items' => $items
+                        'items' => $items,
                         'key' => $key,
                         'value' => $value,
                     ]);
