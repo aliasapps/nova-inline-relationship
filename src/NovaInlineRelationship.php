@@ -169,11 +169,11 @@ class NovaInlineRelationship extends Field
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
-                Log::debug([
-                    'message' => 'getPropertiesWithMetaForDisplay',
-                    'value' => $value,
-                    'key' => $key
-                ]);
+                // Log::debug([
+                //     'message' => 'getPropertiesWithMetaForDisplay',
+                //     'value' => $value,
+                //     'key' => $key
+                // ]);
                 return $this->setMetaFromClass($value, $key);
             });
     }
@@ -207,9 +207,11 @@ class NovaInlineRelationship extends Field
         return $this->getPropertiesFromFields($fields)
             ->keyBy('attribute')
             ->map(function ($value, $key) {
-                // Log::debug([
-                //     '2 value' => $value
-                // ]);
+                Log::debug([
+                    'message' => 'getPropertiesFromFields',
+                    'value' => $value,
+                    'key' => $key
+                ]);
                 return $this->setMetaFromClass($value, $key);
             });
     }
@@ -558,13 +560,13 @@ class NovaInlineRelationship extends Field
             // ]);
             return collect($items)
                 ->map(function ($value, $key) use ($properties, $items) {
-                    Log::debug([
-                        // 'properties' => $properties,
-                        // 'items' => $items,
-                        // 'key' => $key,
-                        // 'value' => $value,
-                        // 'items->{key}' => $items->{$key}
-                    ]);
+                    // Log::debug([
+                    //     // 'properties' => $properties,
+                    //     // 'items' => $items,
+                    //     // 'key' => $key,
+                    //     // 'value' => $value,
+                    //     // 'items->{key}' => $items->{$key}
+                    // ]);
                     return $properties->has($key)
                         ? $this->setMetaFromClass($properties->get($key), $key, $items->{$key} ?? $value)
                         : null;
