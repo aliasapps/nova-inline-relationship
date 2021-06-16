@@ -111,7 +111,7 @@ export default {
         }
       });
 
-      // console.log({ tempOrderType, tempProductTypeId });
+      console.log({ tempOrderType, tempProductTypeId });
 
       this.selectedOrderType = tempOrderType;
       this.selectedProductTypeId = tempProductTypeId;

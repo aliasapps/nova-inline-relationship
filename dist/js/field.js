@@ -33828,7 +33828,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
       });
 
-      // console.log({ tempOrderType, tempProductTypeId });
+      console.log({ tempOrderType: tempOrderType, tempProductTypeId: tempProductTypeId });
 
       this.selectedOrderType = tempOrderType;
       this.selectedProductTypeId = tempProductTypeId;
