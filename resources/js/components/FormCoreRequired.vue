@@ -94,7 +94,7 @@ export default {
         // console.log("fieldAttribute: ", field.fieldAttribute);
         if (field && field.$children && field.$children.length > 0) {
           const value = field.$children[0].field.value;
-          if (field.fieldAttribute !== null) {
+          if (field.fieldAttribute !== null && value !== null) {
             const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
             const join = split.join("_");
             if (join === "order_type") {
