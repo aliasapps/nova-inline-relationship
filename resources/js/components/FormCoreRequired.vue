@@ -87,25 +87,19 @@ export default {
       this.selectedProductTypeId = split[1];
     },
     handleOnFormUpdate(fields) {
-      // console.log(fields, fields.length);
-      const parent = this.$parent;
-      const children = parent.$children;
-
-      console.log({ parent, children });
-
       let tempOrderType = "";
       let tempProductTypeId = "";
 
       fields.forEach(function(field) {
-        console.log("fieldAttribute: ", field);
+        console.log("fieldAttribute: ", field.fieldAttribute);
         if (field && field.$children && field.$children.length > 0) {
           const value = field.$children[0].field.value;
           const split = field.fieldAttribute.split("_").slice(3); // to remove parent model
           const join = split.join("_");
-          // console.table(value, join);
-          if (field.fieldAttribute === "order_type") {
+          console.table(value, join);
+          if (join === "order_type") {
             tempOrderType = value;
-          } else if (field.fieldAttribute === "product_type_id") {
+          } else if (join === "product_type_id") {
             tempProductTypeId = value.split("-")[0];
           }
         }
