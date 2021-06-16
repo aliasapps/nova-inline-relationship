@@ -28,13 +28,16 @@ export default {
     // console.log(this.field);
     // console.log(this);
     // console.log(this.$parent.$children.length);
-    this.handleOnFormUpdate(this.$parent.$children);
 
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
     Nova.$on(
       `${this.orderType}_product_type_id-change`,
       this.handleProductType
     );
+  },
+
+  mounted() {
+    this.handleOnFormUpdate(this.$parent.$children);
   },
 
   data() {
