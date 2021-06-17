@@ -33465,8 +33465,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__FormCoreRequired_vue__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -33575,10 +33573,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   // "label",
   "id", "modelId", "modelKey", "errors", "field"],
 
-  // mounted() {
-  //   console.log("this.field: ", this.field);
-  // },
-
   computed: {
     fields: function fields() {
       var _this = this;
@@ -33596,20 +33590,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         });
       }), "attrib");
 
-      console.log(formItems);
-
       return _extends({
+        // order_type was being put in the bottom...
+        // ...this was to change the order and have it on top.
         order_type: formItems.order_type
       }, formItems);
     },
     label: function label() {
       return this.field.singular ? this.field.singularLabel : this.field.singularLabel + " " + (this.id + 1);
-    }
-  },
-
-  watch: {
-    fields: function fields() {
-      console.log("changed!");
     }
   },
 
@@ -33628,12 +33616,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           } else if (item[0].field.component === "boolean-field") {
             formData.append(item[0].field.attribute, item[0].trueValue);
           } else if (item[0].field.component === "core-required") {
-            var _console$log;
-
-            console.log((_console$log = {
-              message: "core_required",
-              attribute: item[0].field.attribute
-            }, _defineProperty(_console$log, "attribute", item[0].field.attribute), _defineProperty(_console$log, "value", item[0].value), _defineProperty(_console$log, "trueValue", item[0].trueValue), _console$log));
+            // console.log({
+            //   message: "core_required",
+            //   attribute: item[0].field.attribute,
+            //   attribute: item[0].field.attribute,
+            //   value: item[0].value,
+            //   trueValue: item[0].trueValue,
+            // });
             formData.append(item[0].field.attribute, item[0].value ? 1 : 0);
           } else {
             item[0].fill(formData);

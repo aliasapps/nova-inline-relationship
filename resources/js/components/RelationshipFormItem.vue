@@ -112,10 +112,6 @@ export default {
     "field",
   ],
 
-  // mounted() {
-  //   console.log("this.field: ", this.field);
-  // },
-
   computed: {
     fields() {
       const formItems = _.keyBy(
@@ -141,9 +137,9 @@ export default {
         "attrib"
       );
 
-      console.log(formItems);
-
       return {
+        // order_type was being put in the bottom...
+        // ...this was to change the order and have it on top.
         order_type: formItems.order_type,
         ...formItems,
       };
@@ -153,12 +149,6 @@ export default {
       return this.field.singular
         ? this.field.singularLabel
         : `${this.field.singularLabel} ${this.id + 1}`;
-    },
-  },
-
-  watch: {
-    fields() {
-      console.log("changed!");
     },
   },
 
@@ -179,13 +169,13 @@ export default {
           } else if (item[0].field.component === "boolean-field") {
             formData.append(item[0].field.attribute, item[0].trueValue);
           } else if (item[0].field.component === "core-required") {
-            console.log({
-              message: "core_required",
-              attribute: item[0].field.attribute,
-              attribute: item[0].field.attribute,
-              value: item[0].value,
-              trueValue: item[0].trueValue,
-            });
+            // console.log({
+            //   message: "core_required",
+            //   attribute: item[0].field.attribute,
+            //   attribute: item[0].field.attribute,
+            //   value: item[0].value,
+            //   trueValue: item[0].trueValue,
+            // });
             formData.append(item[0].field.attribute, item[0].value ? 1 : 0);
           } else {
             item[0].fill(formData);
