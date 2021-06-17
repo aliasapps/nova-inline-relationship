@@ -33598,7 +33598,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       console.log(formItems);
 
-      return formItems;
+      return _extends({
+        order_type: formItems.order_type
+      }, formItems);
     },
     label: function label() {
       return this.field.singular ? this.field.singularLabel : this.field.singularLabel + " " + (this.id + 1);

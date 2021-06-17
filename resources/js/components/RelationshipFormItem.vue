@@ -143,7 +143,10 @@ export default {
 
       console.log(formItems);
 
-      return formItems;
+      return {
+        order_type: formItems.order_type,
+        ...formItems,
+      };
     },
 
     label() {
