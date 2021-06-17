@@ -33583,7 +33583,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     fields: function fields() {
       var _this = this;
 
-      return _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
+      var formItems = _.keyBy(Object.keys(_extends({}, this.value)).map(function (attrib) {
         return _extends({
           options: {}
         }, _this.value[attrib].meta, {
@@ -33595,6 +33595,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           attrib: attrib
         });
       }), "attrib");
+
+      console.log(formItems);
+
+      return formItems;
     },
     label: function label() {
       return this.field.singular ? this.field.singularLabel : this.field.singularLabel + " " + (this.id + 1);

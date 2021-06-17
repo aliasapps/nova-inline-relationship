@@ -118,7 +118,7 @@ export default {
 
   computed: {
     fields() {
-      return _.keyBy(
+      const formItems = _.keyBy(
         Object.keys({ ...this.value }).map((attrib) => {
           return {
             ...{
@@ -140,6 +140,10 @@ export default {
         }),
         "attrib"
       );
+
+      console.log(formItems);
+
+      return formItems;
     },
 
     label() {
