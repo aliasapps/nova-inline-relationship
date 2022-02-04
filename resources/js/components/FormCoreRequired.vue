@@ -33,6 +33,8 @@ export default {
   },
 
   mounted() {
+    console.log("hello");
+
     this.handleOnFormUpdate(this.$parent.$children);
   },
 
@@ -47,8 +49,6 @@ export default {
   computed: {
     isDisabled() {
       let disabled = false;
-
-      console.log(this.selectedOrderType);
 
       if (
         this.selectedOrderType === "REBUILD" ||
