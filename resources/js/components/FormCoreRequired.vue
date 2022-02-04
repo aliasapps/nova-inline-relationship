@@ -51,7 +51,8 @@ export default {
       if (
         this.selectedOrderType === "REBUILD" ||
         this.selectedOrderType === "RETURN" ||
-        this.selectedOrderType === "CHECK_AND_REPORT"
+        this.selectedOrderType === "CHECK_AND_REPORT" ||
+        this.selectedOrderType === "DROP_OFF"
       ) {
         disabled = true;
       }
