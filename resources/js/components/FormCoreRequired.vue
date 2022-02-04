@@ -48,6 +48,8 @@ export default {
     isDisabled() {
       let disabled = false;
 
+      console.log(this.selectedOrderType);
+
       if (
         this.selectedOrderType === "REBUILD" ||
         this.selectedOrderType === "RETURN" ||
