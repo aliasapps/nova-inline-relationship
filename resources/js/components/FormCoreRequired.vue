@@ -33,8 +33,6 @@ export default {
   },
 
   mounted() {
-    console.log("hello");
-
     this.handleOnFormUpdate(this.$parent.$children);
   },
 
