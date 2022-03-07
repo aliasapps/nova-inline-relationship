@@ -11,6 +11,7 @@
             'bg-gray-300': isDisabled,
           }"
           :placeholder="field.name"
+          v-model="checked"
         />
         <!-- v-model="value" -->
 
@@ -53,6 +54,7 @@ export default {
       // isDisabled: false,
       selectedOrderType: "",
       selectedProductTypeId: undefined,
+      checked: false,
     };
   },
 
