@@ -39,10 +39,6 @@ export default {
 
   created() {
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
-    // Nova.$on(
-    //   `${this.orderType}_product_type_id-change`,
-    //   this.handleProductType
-    // );
   },
 
   mounted() {
@@ -70,7 +66,7 @@ export default {
         disabled = true;
       }
 
-      this.value = !disabled;
+      this.checked = !disabled;
 
       return disabled;
     },
@@ -139,7 +135,7 @@ export default {
     fill(formData) {
       //   console.log(this.field.attribute, this.value);
 
-      formData.append("core_fee", this.value ? 1 : 0 || "");
+      formData.append("core_fee", this.value ? this.value : "");
     },
   },
 };
