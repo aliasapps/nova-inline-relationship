@@ -2,16 +2,28 @@
   <default-field :field="field" :errors="errors" :show-help-text="showHelpText">
     <template slot="field">
       <!-- :id="field.name" -->
-      <input
-        type="checkbox"
-        class="checkbox"
-        :disabled="isDisabled"
-        :class="{
-          'bg-gray-300': isDisabled,
-        }"
-        :placeholder="field.name"
-        v-model="value"
-      />
+      <div class="grid grid-cols-6">
+        <input
+          type="checkbox"
+          class="checkbox"
+          :disabled="isDisabled"
+          :class="{
+            'bg-gray-300': isDisabled,
+          }"
+          :placeholder="field.name"
+        />
+        <!-- v-model="value" -->
+
+        <div :class="textStyle">
+          <input
+            type="number"
+            class="w-full form-control form-input form-input-bordered"
+            :class="errorClasses"
+            :placeholder="field.name"
+            v-model="value"
+          />
+        </div>
+      </div>
     </template>
   </default-field>
 </template>
@@ -56,13 +68,18 @@ export default {
         disabled = true;
       }
 
-      // if (this.selectedProductTypeId && this.selectedProductTypeId == 0) {
-      //   disabled = true;
-      // }
-
       this.value = !disabled;
 
       return disabled;
+    },
+
+    textStyle() {
+      return {
+        "form-group ": true,
+        "col-span-5 col-start-2": true,
+        visible: this.checked,
+        invisible: !this.checked,
+      };
     },
   },
 
