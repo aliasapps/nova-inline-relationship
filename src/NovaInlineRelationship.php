@@ -467,7 +467,7 @@ class NovaInlineRelationship extends Field
 
             if ($attribute === 'order_products' && count($modResponse) === 0) {
                 throw ValidationException::withMessages([
-                    'order_parts' => ['Must attach at least one order product to create an order']
+                    'order_part' => ['Must attach at least one order product to create an order']
                 ]);
             }
 
