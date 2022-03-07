@@ -279,6 +279,12 @@ class NovaInlineRelationship extends Field
     {
         $temp = new stdClass();
 
+        Log::debug([
+            'method' => 'getValueFromField()',
+            'request' => $request,
+            'attribute' => $attribute
+        ]);
+
         // Fill Attributes in Field
         $field->fillAttribute($request, $attribute, $temp, $attribute);
 
