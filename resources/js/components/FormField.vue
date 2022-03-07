@@ -135,6 +135,9 @@ export default {
         });
       } else {
         alert("You must add at least one order part to create an order");
+
+        return;
+
         formData.append(this.field.attribute, []);
       }
     },
