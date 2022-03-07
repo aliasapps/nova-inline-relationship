@@ -6,6 +6,7 @@ use stdClass;
 use Carbon\Carbon;
 use App\Nova\Resource;
 use Exception;
+use Illuminate\Validation\ValidationException;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -464,13 +465,20 @@ class NovaInlineRelationship extends Field
 
             $modResponse = $this->getResourceResponse($request, $response, $properties);
 
+            if ($attribute === 'order_products' && count($modResponse) === 0) {
+                throw ValidationException::withMessages([
+                    'order_parts' => ['Must attach at least one order product to create an order']
+                ]);
+            }
+
             Log::debug([
                 'method' => 'fillAttributeFromRequest()',
                 'inside if' => 'inside if',
                 'model instanceOf Model' => $model instanceof Model,
                 'model' => $model->toArray(),
                 'attribute' => $attribute,
-                'modeResponse' => $modResponse
+                'modResponse' => $modResponse,
+                'is empty' => count($modResponse) === 0
             ]);
 
             if ($model instanceof Model) {
@@ -670,10 +678,10 @@ class NovaInlineRelationship extends Field
                 return $value;
             })->all();
 
-            Log::debug([
-                'method' => 'getResourceResponse()',
-                'fields' => $fields
-            ]);
+            // Log::debug([
+            //     'method' => 'getResourceResponse()',
+            //     'fields' => $fields
+            // ]);
 
             if (!empty($this->sortUsing)) {
                 $fields[$this->sortUsing] = $weight;
