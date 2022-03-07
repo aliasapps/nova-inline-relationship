@@ -68,9 +68,8 @@ export default {
         this.selectedOrderType === "DROP_OFF"
       ) {
         disabled = true;
+        this.checked = !disabled;
       }
-
-      // this.checked = !disabled;
 
       return disabled;
     },
