@@ -70,7 +70,7 @@ export default {
         disabled = true;
       }
 
-      this.checked = !disabled;
+      // this.checked = !disabled;
 
       return disabled;
     },
