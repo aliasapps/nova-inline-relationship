@@ -136,7 +136,9 @@ export default {
       } else {
         alert("You must add at least one order part to create an order");
 
-        return;
+        throw new Error(
+          "You must add at least one order part to create an order"
+        );
 
         formData.append(this.field.attribute, []);
       }
