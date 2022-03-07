@@ -50,14 +50,15 @@ export default {
 
       if (
         this.selectedOrderType === "RETURN" ||
-        this.selectedOrderType === "PICK_UP"
+        this.selectedOrderType === "PICK_UP" ||
+        this.selectedOrderType === "DROP_OFF"
       ) {
         disabled = true;
       }
 
-      if (this.selectedProductTypeId && this.selectedProductTypeId == 0) {
-        disabled = true;
-      }
+      // if (this.selectedProductTypeId && this.selectedProductTypeId == 0) {
+      //   disabled = true;
+      // }
 
       this.value = !disabled;
 
