@@ -104,6 +104,7 @@
 <script>
 import FormCoreFeeRquired from "./FormCoreFeeRquired.vue";
 import FormCoreRequired from "./FormCoreRequired.vue";
+import FormAmountDue from "./FormAmountDue.vue";
 
 export default {
   name: "relationship-form-item",
@@ -111,6 +112,7 @@ export default {
   components: {
     FormCoreRequired,
     FormCoreFeeRquired,
+    FormAmountDue,
   },
 
   props: [

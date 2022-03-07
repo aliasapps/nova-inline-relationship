@@ -34,7 +34,6 @@ export default {
 
   created() {
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
-
   },
 
   mounted() {
@@ -55,7 +54,7 @@ export default {
 
       if (
         this.selectedOrderType === "RETURN" ||
-        this.selectedOrderType === "PICK_UP" ||
+        this.selectedOrderType === "PICK_UP"
       ) {
         disabled = true;
       }
@@ -108,7 +107,7 @@ export default {
     fill(formData) {
       //   console.log(this.field.attribute, this.value);
 
-      formData.append("amount_due", this.value ?? "");
+      formData.append("amount_due", this.value ? this.value : "");
     },
   },
 };
