@@ -75,6 +75,16 @@
       >
       </form-core-fee-rquired>
 
+      <form-amount-due
+        v-else-if="field.attrib === 'amount_due'"
+        :field="field"
+        :ref="attrib"
+        :resource-id="modelId"
+        :resource-name="modelKey"
+        :orderType="field.parentAttribute"
+      >
+      </form-amount-due>
+
       <component
         v-else
         :is="'form-' + field.component"
