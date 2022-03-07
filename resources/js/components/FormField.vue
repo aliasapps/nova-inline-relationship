@@ -122,7 +122,7 @@ export default {
       try {
         this.fillValueFromChildren(formData);
       } catch (error) {
-        console.log(error);
+        return console.log(error);
       }
     },
 
