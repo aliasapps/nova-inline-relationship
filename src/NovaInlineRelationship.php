@@ -445,7 +445,8 @@ class NovaInlineRelationship extends Field
         Log::debug([
             'method' => 'fillAttributeFromRequest()',
             'before if' => 'before if,',
-            'requestAttribute' => $requestAttribute
+            'requestAttribute' => $requestAttribute,
+            'request->exists()' => $request->exists($requestAttribute)
         ]);
 
         if ($request->exists($requestAttribute)) {
