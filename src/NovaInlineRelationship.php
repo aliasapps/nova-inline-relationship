@@ -280,11 +280,11 @@ class NovaInlineRelationship extends Field
     {
         $temp = new stdClass();
 
-        Log::debug([
-            'method' => 'getValueFromField()',
-            'request' => $request,
-            'attribute' => $attribute
-        ]);
+        // Log::debug([
+        //     'method' => 'getValueFromField()',
+        //     'request' => $request,
+        //     'attribute' => $attribute
+        // ]);
 
         // Fill Attributes in Field
         $field->fillAttribute($request, $attribute, $temp, $attribute);
@@ -443,12 +443,12 @@ class NovaInlineRelationship extends Field
     protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
     {
 
-        Log::debug([
-            'method' => 'fillAttributeFromRequest()',
-            'before if' => 'before if,',
-            'requestAttribute' => $requestAttribute,
-            'request->exists()' => $request->exists($requestAttribute)
-        ]);
+        // Log::debug([
+        //     'method' => 'fillAttributeFromRequest()',
+        //     'before if' => 'before if,',
+        //     'requestAttribute' => $requestAttribute,
+        //     'request->exists()' => $request->exists($requestAttribute)
+        // ]);
 
         if ($request->exists($requestAttribute)) {
             $response = is_array($request[$requestAttribute])
@@ -654,10 +654,10 @@ class NovaInlineRelationship extends Field
                 return $value;
             })->all();
 
-            Log::debug([
-                'method' => 'getResourceResponse()',
-                'fields' => $fields
-            ]);
+            // Log::debug([
+            //     'method' => 'getResourceResponse()',
+            //     'fields' => $fields
+            // ]);
 
             if (!empty($this->sortUsing)) {
                 $fields[$this->sortUsing] = $weight;
