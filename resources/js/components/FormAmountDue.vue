@@ -60,7 +60,7 @@ export default {
         disabled = true;
       }
 
-      this.value = !disabled;
+      //   this.value = !disabled;
 
       return disabled;
     },
