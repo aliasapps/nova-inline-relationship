@@ -467,9 +467,11 @@ class NovaInlineRelationship extends Field
             if ($model instanceof Model) {
                 $this->setModelAttributeValue($model, $attribute, $modResponse);
             }
-        } else {
-            throw new Exception('Must attach at least one order part to create an order.');
         }
+
+        // else {
+        //     throw new Exception('Must attach at least one order part to create an order.');
+        // }
     }
 
     /**
@@ -659,10 +661,10 @@ class NovaInlineRelationship extends Field
                 return $value;
             })->all();
 
-            // Log::debug([
-            //     'method' => 'getResourceResponse()',
-            //     'fields' => $fields
-            // ]);
+            Log::debug([
+                'method' => 'getResourceResponse()',
+                'fields' => $fields
+            ]);
 
             if (!empty($this->sortUsing)) {
                 $fields[$this->sortUsing] = $weight;
