@@ -65,6 +65,16 @@
       >
       </form-core-required>
 
+      <form-core-fee-rquired
+        v-if="field.attrib === 'core_fee'"
+        :field="field"
+        :ref="attrib"
+        :resource-id="modelId"
+        :resource-name="modelKey"
+        :orderType="field.parentAttribute"
+      >
+      </form-core-fee-rquired>
+
       <component
         v-else
         :is="'form-' + field.component"
@@ -82,6 +92,7 @@
 </template>
 
 <script>
+import FormCoreFeeRquired from "./FormCoreFeeRquired.vue";
 import FormCoreRequired from "./FormCoreRequired.vue";
 
 export default {
@@ -89,6 +100,7 @@ export default {
 
   components: {
     FormCoreRequired,
+    FormCoreFeeRquired,
   },
 
   props: [
