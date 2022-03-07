@@ -1,25 +1,26 @@
 <template>
   <default-field :field="field" :errors="errors" :show-help-text="showHelpText">
     <template slot="field">
-      <!-- :id="field.name" -->
-      <div class="flex -mr-px">
-        <span
-          class="flex items-center leading-normal rounded rounded-r-none border border-r-0 border-60 px-3 whitespace-no-wrap bg-30 text-80 text-sm font-bold"
-        >
-          $
-        </span>
+      <div class="flex flex-wrap items-stretch w-full relative">
+        <div class="flex -mr-px">
+          <span
+            class="flex items-center leading-normal rounded rounded-r-none border border-r-0 border-60 px-3 whitespace-no-wrap bg-30 text-80 text-sm font-bold"
+          >
+            $
+          </span>
+        </div>
+        <input
+          type="number"
+          step="0.01"
+          placeholder="Add Amount Due"
+          class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 rounded-l-none form-control form-input form-input-bordered"
+          :disabled="isDisabled"
+          :class="{
+            'bg-gray-300': isDisabled,
+          }"
+          v-model="value"
+        />
       </div>
-      <input
-        type="number"
-        step="0.01"
-        placeholder="Add Amount Due"
-        class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 rounded-l-none form-control form-input form-input-bordered"
-        :disabled="isDisabled"
-        :class="{
-          'bg-gray-300': isDisabled,
-        }"
-        v-model="value"
-      />
     </template>
   </default-field>
 </template>
