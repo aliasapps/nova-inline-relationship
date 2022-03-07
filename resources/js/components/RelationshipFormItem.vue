@@ -66,7 +66,7 @@
       </form-core-required>
 
       <form-core-fee-rquired
-        v-if="field.attrib === 'core_fee'"
+        v-else-if="field.attrib === 'core_fee'"
         :field="field"
         :ref="attrib"
         :resource-id="modelId"
