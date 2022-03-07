@@ -18,6 +18,7 @@
         <div :class="textStyle">
           <input
             type="number"
+            step="0.01"
             class="w-full form-control form-input form-input-bordered"
             :class="errorClasses"
             :placeholder="field.name"
