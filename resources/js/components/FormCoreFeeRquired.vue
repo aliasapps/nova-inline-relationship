@@ -1,7 +1,6 @@
 <template>
   <default-field :field="field" :errors="errors" :show-help-text="showHelpText">
     <template slot="field">
-      <!-- :id="field.name" -->
       <div class="grid grid-cols-6">
         <input
           type="checkbox"
@@ -13,7 +12,6 @@
           :placeholder="field.name"
           v-model="checked"
         />
-        <!-- v-model="value" -->
 
         <div :class="textStyle">
           <input
@@ -40,6 +38,12 @@ export default {
 
   created() {
     Nova.$on(`${this.orderType}_order_type-change`, this.handleOrderType);
+
+    if (this.field.value && this.field.value !== "null") {
+      this.checked = true;
+    } else {
+      this.checked = false;
+    }
   },
 
   mounted() {
@@ -48,7 +52,6 @@ export default {
 
   data() {
     return {
-      // isDisabled: false,
       selectedOrderType: "",
       selectedProductTypeId: undefined,
       checked: false,
@@ -87,18 +90,9 @@ export default {
       // console.log(data);
       this.selectedOrderType = data;
     },
-    // handleProductType(data) {
-    //   // console.log(data);
-    //   const split = data.split("-");
-    //   // split = [product_type_id, core_required]...
-    //   // ... essentially an enum that corresponds with...
-    //   // ... the columns. using the core_required value to...
-    //   // ... check if core_required for order_product is required.
-    //   this.selectedProductTypeId = split[1];
-    // },
+
     handleOnFormUpdate(fields) {
       let tempOrderType = "";
-      // let tempProductTypeId = "";
 
       fields.forEach(function(field) {
         // console.log("fieldAttribute: ", field.fieldAttribute);
@@ -110,10 +104,6 @@ export default {
             if (join === "order_type") {
               tempOrderType = value;
             }
-            // else if (join === "product_type_id") {
-            //   // console.table(value, join);
-            //   tempProductTypeId = value.split("-")[1];
-            // }
           }
         }
       });
@@ -121,7 +111,6 @@ export default {
       // console.log({ tempOrderType, tempProductTypeId });
 
       this.selectedOrderType = tempOrderType;
-      // this.selectedProductTypeId = tempProductTypeId;
     },
     /*
      * Set the initial, internal value for the field.
