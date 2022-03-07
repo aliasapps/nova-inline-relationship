@@ -464,6 +464,13 @@ class NovaInlineRelationship extends Field
 
             $modResponse = $this->getResourceResponse($request, $response, $properties);
 
+            Log::debug([
+                'method' => 'fillAttributeFromRequest()',
+                'inside if' => 'inside if',
+                'model instanceOf Model' => $model instanceof Model,
+                'model' => $model
+            ]);
+
             if ($model instanceof Model) {
                 $this->setModelAttributeValue($model, $attribute, $modResponse);
             }
