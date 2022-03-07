@@ -448,12 +448,12 @@ class NovaInlineRelationship extends Field
     protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
     {
 
-        // Log::debug([
-        //     'method' => 'fillAttributeFromRequest()',
-        //     'before if' => 'before if,',
-        //     'requestAttribute' => $requestAttribute,
-        //     'request->exists()' => $request->exists($requestAttribute)
-        // ]);
+        Log::debug([
+            'method' => 'fillAttributeFromRequest()',
+            'before if' => 'before if,',
+            'requestAttribute' => $requestAttribute,
+            'request->exists()' => $request->exists($requestAttribute)
+        ]);
 
         if ($request->exists($requestAttribute)) {
             $response = is_array($request[$requestAttribute])
