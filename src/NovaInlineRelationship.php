@@ -5,6 +5,7 @@ namespace KirschbaumDevelopment\NovaInlineRelationship;
 use stdClass;
 use Carbon\Carbon;
 use App\Nova\Resource;
+use Exception;
 use Laravel\Nova\Nova;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -461,6 +462,8 @@ class NovaInlineRelationship extends Field
             if ($model instanceof Model) {
                 $this->setModelAttributeValue($model, $attribute, $modResponse);
             }
+        } else {
+            throw new Exception('Must attach at least one order part to create an order.');
         }
     }
 
