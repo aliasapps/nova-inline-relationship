@@ -287,7 +287,12 @@ class NovaInlineRelationship extends Field
         // ]);
 
         // Fill Attributes in Field
-        $field->fillAttribute($request, $attribute, $temp, $attribute);
+        try {
+
+            $field->fillAttribute($request, $attribute, $temp, $attribute);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+        }
 
         return $temp->{$attribute} ?? null;
     }
