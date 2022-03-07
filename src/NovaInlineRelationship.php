@@ -468,7 +468,8 @@ class NovaInlineRelationship extends Field
                 'method' => 'fillAttributeFromRequest()',
                 'inside if' => 'inside if',
                 'model instanceOf Model' => $model instanceof Model,
-                'model' => $model
+                'model' => $model->toArray(),
+                'attribute' => $attribute
             ]);
 
             if ($model instanceof Model) {
