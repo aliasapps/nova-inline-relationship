@@ -449,12 +449,12 @@ class NovaInlineRelationship extends Field
     protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
     {
 
-        Log::debug([
-            'method' => 'fillAttributeFromRequest()',
-            'before if' => 'before if,',
-            'requestAttribute' => $requestAttribute,
-            'request->exists()' => $request->exists($requestAttribute)
-        ]);
+        // Log::debug([
+        //     'method' => 'fillAttributeFromRequest()',
+        //     'before if' => 'before if,',
+        //     'requestAttribute' => $requestAttribute,
+        //     'request->exists()' => $request->exists($requestAttribute)
+        // ]);
 
         if ($request->exists($requestAttribute)) {
             $response = is_array($request[$requestAttribute])
@@ -467,19 +467,19 @@ class NovaInlineRelationship extends Field
 
             if ($attribute === 'order_products' && count($modResponse) === 0) {
                 throw ValidationException::withMessages([
-                    'alternate_address' => ['Must attach at least one order product to create an order']
+                    'alternate_address' => ['Must attach at least one order part to create an order']
                 ]);
             }
 
-            Log::debug([
-                'method' => 'fillAttributeFromRequest()',
-                'inside if' => 'inside if',
-                'model instanceOf Model' => $model instanceof Model,
-                'model' => $model->toArray(),
-                'attribute' => $attribute,
-                'modResponse' => $modResponse,
-                'is empty' => count($modResponse) === 0
-            ]);
+            // Log::debug([
+            //     'method' => 'fillAttributeFromRequest()',
+            //     'inside if' => 'inside if',
+            //     'model instanceOf Model' => $model instanceof Model,
+            //     'model' => $model->toArray(),
+            //     'attribute' => $attribute,
+            //     'modResponse' => $modResponse,
+            //     'is empty' => count($modResponse) === 0
+            // ]);
 
             if ($model instanceof Model) {
                 $this->setModelAttributeValue($model, $attribute, $modResponse);
